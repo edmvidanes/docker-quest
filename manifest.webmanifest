@@ -1,0 +1,11 @@
+{
+  "name": "Docker Quest",
+  "short_name": "Docker Quest",
+  "description": "An offline Docker learning adventure",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#101718",
+  "theme_color": "#101718",
+  "icons": [{"src": "assets/mark.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"}]
+}
