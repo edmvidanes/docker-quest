@@ -6,12 +6,26 @@
   <meta name="theme-color" content="#101718">
   <meta name="description" content="Learn Docker through an offline, visual, flag-based adventure. Sixteen hands-on missions. No installation required.">
   <title>Docker Quest — Learn. Build. Ship.</title>
-  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="styles.css">
-  <script src="curriculum.js" defer></script>
-  <script src="engine.js" defer></script>
-  <script src="app.js" defer></script>
+  <!-- Single-file build: upload this object as text/html; no companion assets required. -->
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTciIGZpbGw9IiNjNmYyN2MiLz48ZyBmaWxsPSIjMTcyMTFiIj48cmVjdCB4PSIxMyIgeT0iMjUiIHdpZHRoPSIxMCIgaGVpZ2h0PSI5IiByeD0iMS41Ii8+PHJlY3QgeD0iMjYiIHk9IjI1IiB3aWR0aD0iMTAiIGhlaWdodD0iOSIgcng9IjEuNSIvPjxyZWN0IHg9IjI2IiB5PSIxMyIgd2lkdGg9IjEwIiBoZWlnaHQ9IjkiIHJ4PSIxLjUiLz48cmVjdCB4PSIzOSIgeT0iMjUiIHdpZHRoPSIxMCIgaGVpZ2h0PSI5IiByeD0iMS41Ii8+PHBhdGggZD0iTTkgMzhoMzlsNy02YzIgMTQtOCAyMy0yNSAyM0MxOCA1NSAxMSA0OSA5IDM4WiIvPjwvZz48L3N2Zz4K" type="image/svg+xml">
+  <style id="docker-quest-styles">
+@charset "UTF-8";
+:root{--bg:#101718;--sidebar:#121a1b;--surface:#192223;--surface2:#1e292a;--line:#2d3939;--text:#f0f4ec;--muted:#a5b4b0;--dim:#788d86;--lime:#c6f27c;--blue:#95cddd;--peach:#eab591;--purple:#b7a2e4;--red:#f29f98;--mono:"Cascadia Code","SFMono-Regular",Consolas,monospace;--sans:"Segoe UI",Arial,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.55 var(--sans);-webkit-font-smoothing:antialiased}button,input,select,textarea{font:inherit}button,a,input,summary{touch-action:manipulation}button{cursor:pointer}button:disabled{cursor:not-allowed}a{color:inherit}button{color:inherit}button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--lime);outline-offset:4px}input:focus-visible{outline:2px solid var(--lime);outline-offset:1px}button{border:0}h1,h2,h3,h4,p{margin:0}h1{font-size:34px;line-height:1.2;letter-spacing:-1.25px;font-weight:650}h2{font-size:20px;letter-spacing:-.45px;font-weight:600}h3{font-size:17px;letter-spacing:-.3px;font-weight:600}small{font-size:12px}svg{vertical-align:middle}svg.icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}.muted{color:var(--muted)}.eyebrow{font-size:10px;font-weight:700;letter-spacing:1.7px;text-transform:uppercase;color:var(--dim)}.lime{--tone:var(--lime)}.blue{--tone:var(--blue)}.peach{--tone:var(--peach)}.purple{--tone:var(--purple)}.pill{display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border-radius:6px;font-size:11px;font-weight:600;background:#26382c;color:var(--lime);white-space:nowrap}.pill.neutral{background:#263133;color:var(--muted)}.pill .icon{width:13px;height:13px}.skip-link{position:absolute;left:16px;top:-80px;padding:10px;background:var(--lime);color:var(--bg);z-index:100}.skip-link:focus{top:12px}
+.shell{min-height:100vh;padding-left:232px}.sidebar{position:fixed;top:0;left:0;bottom:0;width:232px;background:var(--sidebar);border-right:1px solid var(--line);display:flex;flex-direction:column;padding:30px 22px;z-index:30}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:38px}.brand img{width:36px;height:36px;border-radius:10px}.brand strong{display:block;font-size:20px;letter-spacing:-.75px;line-height:1.2;font-weight:650}.brand span{font-size:9px;letter-spacing:2.3px;color:var(--muted);text-transform:uppercase}.nav-caption{margin:0 12px 11px}.nav{display:flex;flex-direction:column;gap:6px}.nav button{display:flex;align-items:center;gap:12px;text-align:left;padding:12px;border-radius:8px;background:transparent;color:var(--muted);font-size:13px}.nav button:hover{background:var(--surface)}.nav button.active{background:#29392b;color:var(--lime)}.nav button .nav-count{margin-left:auto;font-size:10px;opacity:.7}.sidebar-card{margin-top:34px;padding:16px 14px;border:1px solid var(--line);border-radius:10px;background:linear-gradient(145deg,#202c26,#172020)}.sidebar-card .icon{color:var(--lime);margin-bottom:11px}.sidebar-card h4{font-size:12px;font-weight:600}.sidebar-card p{font-size:11px;color:var(--muted);margin-top:6px;line-height:1.7}.sidebar-foot{margin-top:auto;padding-top:24px}.offline-indicator{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:8px}.dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 3px #c6f27c12}.sidebar-foot p{font-size:10px;color:var(--dim);margin:8px 0 15px}.utility-actions{display:flex;gap:8px}.utility-actions button{background:transparent;border:1px solid var(--line);padding:7px;line-height:1;border-radius:6px;color:var(--muted)}.utility-actions .icon{width:16px;height:16px}.topbar{height:76px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);padding:0 38px}.breadcrumb{font-size:12px;color:var(--dim);display:flex;align-items:center;gap:9px}.breadcrumb strong{font-weight:500;color:var(--text)}.breadcrumb .icon{width:14px;height:14px}.top-actions{display:flex;align-items:center;gap:22px}.xp-count{color:var(--lime);display:flex;align-items:center;gap:6px;font:12px var(--mono)}.xp-count .icon{width:16px;height:16px}.avatar{width:32px;height:32px;border:1px solid #485448;background:#29352b;border-radius:50%;display:grid;place-items:center;color:var(--lime);font-size:11px}.profile-mini{display:flex;align-items:center;gap:10px;font-size:12px}.profile-mini small{color:var(--dim);display:block;font-size:10px;line-height:1.2}.mobile-menu{display:none;background:none;padding:6px}.main{max-width:1510px;margin:0 auto;padding:34px 38px 35px}.page-head{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:25px}.page-head p{font-size:13px;color:var(--muted);margin-top:7px}.page-head .eyebrow{margin-bottom:9px}.text-button{display:inline-flex;align-items:center;gap:7px;background:none;font-size:12px;color:var(--muted);padding:7px 0}.text-button:hover{color:var(--lime)}.text-button .icon{width:15px;height:15px}.button{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:7px;font-size:12px;font-weight:600;padding:11px 16px;line-height:1.4;background:var(--lime);color:#1a281c;text-decoration:none;border:1px solid transparent;transition:background .15s,transform .15s}.button:hover{background:#d5ff95;transform:translateY(-1px)}.button .icon{width:16px;height:16px}.button.secondary{background:var(--surface2);color:var(--text);border-color:var(--line)}.button.secondary:hover{background:#293637}.button.ghost{background:transparent;color:var(--muted);border-color:var(--line)}.button:disabled{opacity:.4;transform:none}.button.danger{background:#3c2525;color:var(--red);border-color:#69443f}.button.small{padding:8px 12px;font-size:11px}.card{border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.dashboard-grid{display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:25px}.hero{height:280px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 85% 60%,#40583a66,transparent 65%),linear-gradient(112deg,#24332a,#1b2925);border-color:#3a4c3b;padding:30px}.hero:before{content:"";position:absolute;inset:0;background-image:radial-gradient(#9ebe8c28 .7px,transparent .8px);background-size:18px 18px;mask-image:linear-gradient(to right,transparent,#000)}.hero-copy{position:relative;z-index:2;width:56%;height:100%;display:flex;flex-direction:column;align-items:flex-start}.hero .eyebrow{color:var(--lime);font-size:9px;letter-spacing:1.65px;display:flex;gap:7px;align-items:center}.hero .eyebrow:before{content:"";height:1px;width:15px;background:var(--lime)}.hero h2{font-size:31px;line-height:1.15;letter-spacing:-1.1px;margin-top:13px;max-width:310px;font-weight:600}.hero h2 em{font-style:normal;color:var(--lime)}.hero p{color:#b7c5b4;font-size:12px;line-height:1.7;max-width:270px;margin-top:11px}.hero .button{margin-top:auto;padding:10px 15px}.hero-art{position:absolute;right:-16px;top:24px;width:52%;height:240px;overflow:visible}.hero-art .float-cargo{animation:cargo-float 5s ease-in-out infinite}.hero-art .float-cargo.second{animation-delay:-2s}.hero-art .signal{stroke-dasharray:6 7;animation:route-flow 15s linear infinite}.hero-tag{position:absolute;bottom:24px;right:23px;font:9px var(--mono);color:#9bab91;display:flex;gap:6px;align-items:center}.stats-strip{display:flex;gap:28px;padding:20px 1px 22px}.stat-item{display:flex;align-items:center;gap:10px}.stat-item .icon{color:var(--dim);width:19px;height:19px}.stat-value{font-size:14px;font-weight:600}.stat-label{font-size:10px;color:var(--dim);margin-top:1px}.learning-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px}.learning-head h2{font-size:18px}.learning-head span{font-size:10px;color:var(--dim)}.zones{display:grid;grid-template-columns:1fr 1fr;gap:17px}.zone-card{overflow:hidden;min-width:0}.zone-head{padding:19px 18px 13px}.zone-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.zone-icon{background:color-mix(in srgb,var(--tone) 12%,transparent);color:var(--tone);width:35px;height:35px;border-radius:9px;display:grid;place-items:center}.chapter{font:9px var(--mono);color:var(--dim);letter-spacing:1px}.zone-card h3{font-size:16px}.zone-card .subtitle{font-size:11px;color:var(--dim);margin-top:3px}.zone-progress{height:3px;background:#2b3635;margin-top:16px;border-radius:4px;overflow:hidden}.zone-progress span{display:block;height:100%;background:var(--tone)}.level-list{padding:0 8px 8px}.level-row{width:100%;background:transparent;display:flex;align-items:center;gap:9px;text-align:left;border-radius:6px;padding:10px;min-height:44px}.level-row:hover:not(:disabled){background:#25302d}.level-row:disabled{opacity:.55}.level-row .level-num{width:22px;height:22px;display:grid;place-items:center;border:1px solid #384642;border-radius:6px;color:var(--dim);font:10px var(--mono);flex-shrink:0}.level-row.complete .level-num{border-color:transparent;color:var(--lime);background:#2d3e2b}.level-row.current .level-num{background:var(--lime);border-color:var(--lime);color:#243127}.level-row .level-title{font-size:11px;flex:1}.level-row .icon{width:12px;height:12px;color:var(--dim)}.level-row.current{background:#2b3b2d}.level-row.current .level-title{color:var(--lime)}.level-row .level-time{font:9px var(--mono);color:var(--dim)}.voyage{padding:22px 20px;align-self:start;position:sticky;top:24px}.voyage h3{font-size:14px}.voyage .eyebrow{font-size:9px}.progress-ring{display:grid;place-items:center;position:relative;width:144px;height:144px;margin:21px auto 16px}.progress-ring svg{width:144px;height:144px;transform:rotate(-90deg)}.progress-ring circle{fill:none;stroke:#2d3934;stroke-width:6}.progress-ring circle.value{stroke:var(--lime);stroke-linecap:round;transition:stroke-dashoffset .7s}.ring-content{position:absolute;text-align:center}.ring-content strong{font-size:32px;letter-spacing:-1px;line-height:1.1;font-weight:600}.ring-content span{font-size:13px;color:var(--dim)}.ring-content small{display:block;font-size:10px;color:var(--muted);margin-top:5px}.rank-title{text-align:center}.rank-title h4{font-size:14px;font-weight:500}.rank-title p{font-size:10px;color:var(--dim);margin-top:3px}.voyage-divider{height:1px;background:var(--line);margin:21px 0}.skill-row{margin-top:15px}.skill-meta{display:flex;justify-content:space-between;gap:12px;font-size:10px;margin-bottom:7px;color:var(--muted)}.skill-meta span:last-child{font:9px var(--mono);color:var(--dim)}.skill-track{height:4px;background:#2a3532;border-radius:4px;overflow:hidden}.skill-track span{display:block;height:100%;background:var(--tone)}.mini-badges{display:flex;justify-content:space-between;margin-top:15px;gap:8px}.mini-badge{text-align:center;font-size:9px;color:var(--dim);flex:1}.mini-badge .badge-icon{width:42px;height:44px;margin:0 auto 8px;color:#708076;background:#26302c;display:grid;place-items:center;clip-path:polygon(50% 0,94% 23%,94% 76%,50% 100%,6% 76%,6% 23%)}.mini-badge.earned .badge-icon{color:var(--lime);background:#3c4c2e}.voyage-note{font-size:10px;line-height:1.7;color:var(--dim);margin-top:20px}.bottom-note{display:flex;align-items:center;gap:7px;margin-top:24px;font-size:10px;color:var(--dim)}.bottom-note .icon{width:13px;height:13px}.page-footer{margin-top:30px;padding-top:19px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:15px;color:var(--dim);font-size:10px}.page-footer span{display:flex;align-items:center;gap:6px}.page-footer .icon{width:12px;height:12px}
+.mission-title-row{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-bottom:23px}.mission-title-row h1{font-size:29px}.mission-title-row p{margin-top:6px;color:var(--muted);font-size:12px}.mission-tags{display:flex;gap:7px;margin-top:13px;flex-wrap:wrap}.mission-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(285px,1fr);gap:22px}.workbench{min-width:0;display:flex;flex-direction:column;gap:20px}.panel-header{padding:15px 19px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);gap:10px}.panel-title{font-size:12px;font-weight:600;display:flex;align-items:center;gap:8px}.panel-title .icon{width:16px;height:16px;color:var(--dim)}.panel-header small{font-size:10px;color:var(--dim)}.animation-card{overflow:hidden}.diagram-stage{padding:25px 21px 22px;position:relative;min-height:206px;background:radial-gradient(ellipse at 50% 80%,#34442d28,transparent 75%);background-image:radial-gradient(#8aaa781c .7px,transparent .8px);background-size:18px 18px;display:flex;align-items:center}.diagram-nodes{display:flex;align-items:center;justify-content:center;gap:0;width:100%}.diagram-node{width:25%;max-width:125px;position:relative;text-align:center;opacity:.55;transition:opacity .3s}.diagram-node.reached{opacity:1}.diagram-node.active .node-body{border-color:var(--lime);background:#2b392b;box-shadow:0 0 25px #c6f27c0c}.node-body{width:65px;height:61px;margin:0 auto 10px;border:1px solid #536249;background:#243029;border-radius:10px;display:grid;place-items:center;position:relative;transition:.3s}.node-body .icon{width:29px;height:29px;color:#bfcea9}.diagram-node.active .node-body .icon{color:var(--lime)}.node-step{position:absolute;right:-6px;top:-6px;width:17px;height:17px;background:var(--surface);border:1px solid var(--line);border-radius:50%;font:9px var(--mono);display:grid;place-items:center;color:var(--dim)}.diagram-node.active .node-step{background:var(--lime);border-color:var(--lime);color:#263326}.node-label{font-size:11px;line-height:1.35;font-weight:600;min-height:30px}.node-detail{font:9px var(--mono);color:var(--dim);margin-top:5px;overflow-wrap:anywhere}.diagram-arrow{flex:1;min-width:12px;height:1px;background:#4a5943;position:relative;margin:0 -1px 35px}.diagram-arrow:after{content:"";position:absolute;right:0;top:-3px;width:5px;height:5px;border-top:1px solid #4a5943;border-right:1px solid #4a5943;transform:rotate(45deg)}.diagram-arrow.flow:before{content:"";width:5px;height:5px;background:var(--lime);border-radius:50%;position:absolute;top:-2px;animation:packet-flow 1.6s linear infinite;box-shadow:0 0 9px #c6f27c80}.animation-caption{padding:15px 19px 17px;border-top:1px solid var(--line);min-height:103px}.frame-caption{font-size:12px;color:#becbbb;min-height:36px;margin-bottom:11px;line-height:1.6}.animation-controls{display:flex;align-items:center;justify-content:space-between;gap:8px}.animation-controls button{background:none;color:var(--muted);display:flex;align-items:center;gap:5px;font-size:10px;padding:4px}.animation-controls button:hover{color:var(--lime)}.animation-controls .icon{width:14px;height:14px}.step-dots{display:flex;gap:5px;align-items:center}.step-dots button{width:23px;height:23px;display:grid;place-items:center;line-height:1}.step-dots button:before{content:"";width:5px;height:5px;background:#596850;border-radius:50%}.step-dots button.active:before{background:var(--lime);width:7px;height:7px}.terminal{background:#0b1113;overflow:hidden;position:relative}.terminal .panel-header{background:#141d1f;border-color:#293336;padding:12px 16px}.terminal-dots{display:flex;gap:5px;margin-right:4px}.terminal-dots span{width:7px;height:7px;border-radius:50%;background:#ec9c8f}.terminal-dots span:nth-child(2){background:#d9c283}.terminal-dots span:nth-child(3){background:#a6c18c}.terminal-title{font:10px var(--mono);color:#889b98}.terminal-log{height:268px;overflow:auto;padding:16px 18px 0;font:11px/1.75 var(--mono);scrollbar-width:thin;scrollbar-color:#384842 transparent}.terminal-line{white-space:pre-wrap;overflow-wrap:anywhere;margin:0 0 10px;color:#b3c6bd}.terminal-line.command{color:#e5eed9;margin-bottom:5px}.terminal-line.command .prompt{color:var(--lime)}.terminal-line.error{color:var(--red)}.terminal-line.success{color:var(--lime)}.terminal-line.welcome{color:#7f9690}.terminal-input-row{display:flex;align-items:center;gap:9px;padding:10px 18px 15px;border-top:1px solid #22312b;margin-top:10px}.terminal-prompt{font:11px var(--mono);color:var(--lime);white-space:nowrap}.terminal-input-row input{background:transparent;color:#e5eed9;border:none;width:100%;min-width:0;font:12px var(--mono);outline:none;padding:7px 0}.terminal-input-row input:focus-visible{outline:none}.terminal-input-row:focus-within{box-shadow:inset 0 -2px 0 #9ccc6950}.terminal-input-row input::placeholder{color:#546961;font-size:11px}.terminal-enter{padding:5px 7px;background:#243027;border-radius:4px;color:#b2c8a8;font:10px var(--mono)}.terminal-hint{display:flex;gap:15px;font:9px var(--mono);color:var(--dim);padding:0 3px;flex-wrap:wrap}.terminal-hint kbd{font:inherit;color:var(--muted);border:1px solid var(--line);padding:1px 4px;border-radius:3px}.objectives-card{padding:21px}.mission-right{display:flex;flex-direction:column;gap:18px}.brief-text{font-size:12px;line-height:1.85;color:var(--muted);margin:13px 0 20px}.objectives-heading{display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:1.2px;color:var(--dim);text-transform:uppercase}.objective-count{font:10px var(--mono);letter-spacing:0}.objective-list{list-style:none;padding:0;margin:12px 0 0;display:flex;flex-direction:column;gap:13px}.objective-list li{display:flex;align-items:flex-start;gap:10px;font-size:12px;color:var(--muted)}.objective-check{width:17px;height:17px;border:1px solid #435045;border-radius:50%;flex-shrink:0;margin-top:1px;display:grid;place-items:center}.objective-check .icon{width:11px;height:11px;stroke-width:2.5}.objective-list li.done{color:#d2dfc6}.objective-list li.done .objective-check{background:var(--lime);color:#203121;border-color:var(--lime)}.hint-area{border-top:1px solid var(--line);padding-top:14px;margin-top:20px}.hint-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;background:none;padding:0;color:var(--muted);font-size:11px}.hint-toggle span{display:flex;gap:7px;align-items:center}.hint-toggle .icon{width:15px;height:15px;color:var(--peach)}.hint-content{background:#242c25;border-radius:6px;padding:12px;margin-top:11px;color:#c9cdbb;font-size:11px;white-space:pre-wrap;line-height:1.7}.hint-content code{font-family:var(--mono)}.hint-meta{color:var(--dim);font-size:9px;margin-top:8px}.capture-card{padding:20px;background:linear-gradient(115deg,#253227,#1a2721);border-color:#394a34}.capture-card h3{font-size:13px;display:flex;align-items:center;gap:8px}.capture-card h3 .icon{width:17px;height:17px;color:var(--lime)}.capture-card p{font-size:11px;color:var(--muted);line-height:1.7;margin-top:9px}.flag-form{display:flex;gap:7px;margin-top:14px}.flag-form input{width:100%;min-width:0;background:#142019;border:1px solid #475742;border-radius:6px;padding:9px 10px;color:var(--lime);font:10px var(--mono)}.flag-form input::placeholder{color:#6b8066}.flag-form .button{padding:9px 11px;font-size:11px}.flag-status{font-size:10px;line-height:1.5;margin-top:10px;color:var(--dim)}.flag-status.error{color:var(--red)}.flag-status.success{color:var(--lime)}.notes-card{padding:19px}.notes-card h3{display:flex;gap:8px;font-size:12px;align-items:center}.notes-card .icon{width:15px;height:15px;color:var(--blue)}.notes-card p{font-size:11px;line-height:1.85;color:var(--muted);margin-top:10px}.completion-banner{background:#2a3c26;border:1px solid #56733d;padding:16px 20px;border-radius:10px;margin-bottom:22px;display:flex;align-items:center;justify-content:space-between;gap:15px}.completion-banner h3{font-size:15px;color:var(--lime)}.completion-banner p{font-size:11px;color:#bfd2ab;margin-top:3px}
+.sandbox-note{display:flex;gap:10px;align-items:flex-start;font-size:12px;color:var(--muted);padding:16px 19px;margin-bottom:22px;line-height:1.7}.sandbox-note .icon{color:var(--blue);width:18px;height:18px;margin-top:2px}.inventory{padding:18px}.inventory h3{font-size:13px}.inventory-group{margin-top:17px}.inventory-group .eyebrow{font-size:9px;margin-bottom:8px}.inventory-row{display:flex;gap:8px;align-items:center;padding:7px 0;font:10px var(--mono);color:var(--muted);border-bottom:1px solid #2b373230}.inventory-row .icon{width:13px;height:13px;color:var(--lime)}.inventory-row span:last-child{margin-left:auto;font-size:9px;color:var(--dim)}.inventory-empty{font-size:11px;color:var(--dim);padding:5px 0}.recipe-list{display:flex;flex-direction:column;gap:9px;margin-top:13px}.recipe-list button{background:var(--surface2);border:1px solid var(--line);border-radius:6px;padding:10px 12px;display:flex;align-items:center;justify-content:space-between;text-align:left;font-size:11px;color:var(--muted)}.recipe-list button:hover{border-color:#648342;color:var(--lime)}.recipe-list .icon{width:14px;height:14px}.guide-search{background:var(--surface);border:1px solid var(--line);color:var(--text);border-radius:7px;padding:10px 13px;width:250px;font-size:12px}.guide-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.guide-card{padding:20px;min-width:0}.guide-card h3{font-size:15px}.guide-card p{font-size:11px;color:var(--muted);line-height:1.8;margin:9px 0 15px}.guide-command{border-top:1px solid var(--line);padding:12px 0}.guide-command:last-child{padding-bottom:0}.guide-command code{font:10px/1.8 var(--mono);color:var(--lime);overflow-wrap:anywhere;display:block}.guide-command span{font-size:10px;color:var(--dim);display:block;margin-top:3px}.guide-command button{background:transparent;float:right;padding:4px;color:var(--dim);margin-left:8px;border-radius:4px}.guide-command button:hover{background:var(--surface2);color:var(--lime)}.guide-command .icon{width:13px;height:13px}.empty-state{text-align:center;padding:50px;color:var(--muted)}.achievements-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.achievement{padding:26px 22px;text-align:center;opacity:.65}.achievement.earned{opacity:1;background:radial-gradient(ellipse at 50% 0,#c6f27c0e,transparent 80%),var(--surface);border-color:#4d633a}.achievement-medal{width:72px;height:78px;margin:0 auto 19px;display:grid;place-items:center;background:#2b3830;color:#8e9e86;clip-path:polygon(50% 0,94% 23%,94% 76%,50% 100%,6% 76%,6% 23%)}.achievement.earned .achievement-medal{background:#3b502e;color:var(--lime)}.achievement-medal .icon{width:32px;height:32px}.achievement h3{font-size:16px}.achievement p{font-size:11px;color:var(--muted);margin-top:7px;line-height:1.8}.achievement-status{font-size:10px;color:var(--dim);margin-top:16px;display:flex;align-items:center;justify-content:center;gap:5px}.earned .achievement-status{color:var(--lime)}.achievement-status .icon{width:12px;height:12px}
+.toast{position:fixed;left:calc(50% + 116px);bottom:26px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#34462d;border:1px solid #68834d;box-shadow:0 5px 35px #0005;border-radius:9px;color:#e0f0cc;padding:12px 19px;font-size:12px;z-index:80;max-width:min(90vw,460px);transition:.25s}.toast.visible{opacity:1;transform:translate(-50%,0)}dialog{background:var(--surface);color:var(--text);border:1px solid #435344;border-radius:16px;width:470px;max-width:calc(100vw - 30px);padding:28px;box-shadow:0 20px 80px #0008}dialog::backdrop{background:#050b0bd9;backdrop-filter:blur(5px)}.modal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}.modal-header h2{font-size:20px}.modal-close{background:transparent;color:var(--muted);padding:5px}.modal-close .icon{width:18px;height:18px}.modal-copy{font-size:12px;color:var(--muted);line-height:1.9}.modal-actions{display:flex;gap:9px;margin-top:20px;flex-wrap:wrap}.setting-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}.setting-row strong{font-size:12px;font-weight:500}.setting-row small{display:block;color:var(--dim);font-size:10px;margin-top:3px}.setting-row input[type=checkbox]{accent-color:var(--lime);width:17px;height:17px}.modal-divider{border:0;border-top:1px solid var(--line);margin:20px 0}.modal-success{text-align:center}.modal-success .achievement-medal{background:#3d522d;color:var(--lime);margin-top:4px;margin-bottom:18px}.modal-success h2{font-size:26px;line-height:1.25}.modal-success .modal-copy{margin-top:11px}.reward-line{font:13px var(--mono);color:var(--lime);margin:18px 0}.flag-display{font:11px var(--mono);color:var(--lime);padding:11px;background:#112015;border:1px dashed #536d41;border-radius:7px;overflow-wrap:anywhere}.modal-success .modal-actions{justify-content:center}.file-input{display:none}.storage-warning{font-size:11px;color:var(--peach);line-height:1.7;margin-top:12px}.confetti{position:fixed;inset:0;pointer-events:none;z-index:100;overflow:hidden}.confetti i{position:absolute;left:var(--left);top:-15px;width:7px;height:12px;background:var(--color);animation:confetti-fall var(--duration) ease-in var(--delay) forwards}.motion-off *, .motion-off *:before, .motion-off *:after{animation:none!important;transition:none!important}.menu-overlay{display:none}
+@keyframes cargo-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}@keyframes route-flow{to{stroke-dashoffset:-180}}@keyframes packet-flow{from{left:0;opacity:0}15%{opacity:1}85%{opacity:1}to{left:100%;opacity:0}}@keyframes confetti-fall{to{transform:translateY(110vh) rotate(650deg);opacity:0}}
+@media(min-width:1550px){.main{padding-top:42px}.hero{height:310px}.hero h2{font-size:37px}.hero-art{height:270px}.hero-copy{width:55%}.hero p{font-size:13px}.dashboard-grid{grid-template-columns:minmax(0,1fr) 290px;gap:30px}.zones{gap:22px}.zone-head{padding:22px}.level-row{padding:12px}.level-row .level-title{font-size:12px}.voyage{padding:25px}.hero .button{padding:12px 18px}}
+@media(max-width:1180px){.shell{padding-left:205px}.sidebar{width:205px;padding-left:17px;padding-right:17px}.main{padding:28px 25px}.topbar{padding:0 25px}.dashboard-grid{grid-template-columns:minmax(0,1fr) 230px;gap:18px}.hero{height:276px;padding:25px}.hero h2{font-size:27px}.hero p{max-width:225px;font-size:11px}.hero-art{right:-24px;top:48px;width:48%;height:190px}.hero-copy{width:64%}.hero-tag{font-size:8px;right:13px;bottom:16px}.voyage{padding:18px 16px}.stats-strip{gap:20px}.zones{gap:12px}.zone-head{padding:16px 14px}.level-row{gap:7px;padding:9px 7px}.level-row .level-title{font-size:10px}.level-time{display:none}.mission-layout{grid-template-columns:minmax(0,1.3fr) minmax(270px,1fr);gap:16px}.diagram-stage{padding:24px 12px}.node-body{width:52px;height:53px}.node-label{font-size:10px}.node-detail{font-size:8px}.guide-grid{grid-template-columns:1fr 1fr}.toast{left:calc(50% + 102px)}}
+@media(max-width:1000px){.dashboard-grid{grid-template-columns:minmax(0,1fr)}.voyage{position:static;display:none}.hero{height:275px}.hero-copy{width:53%}.hero h2{font-size:32px}.hero p{max-width:270px;font-size:12px}.hero-art{top:23px;width:49%;height:230px;right:0}.hero-tag{font-size:9px;right:25px;bottom:24px}.level-time{display:block}.level-row .level-title{font-size:11px}.zones{gap:17px}.mission-layout{grid-template-columns:minmax(0,1fr)}.mission-right{display:grid;grid-template-columns:1fr 1fr}.objectives-card{grid-row:span 2}.diagram-stage{min-height:185px;padding:25px}.node-body{width:65px;height:61px}.node-label{font-size:11px}.node-detail{font-size:9px}.terminal-log{height:280px}.achievements-grid{grid-template-columns:1fr 1fr}.main .page-head h1{font-size:30px}}
+@media(max-width:760px){.shell{padding-left:0}.sidebar{transform:translateX(-100%);transition:transform .2s;width:232px}.menu-open .sidebar{transform:translateX(0)}.menu-open .menu-overlay{display:block;position:fixed;inset:0;background:#0009;z-index:29}.mobile-menu{display:block}.topbar{height:62px;padding:0 20px}.breadcrumb{margin-right:auto;font-size:11px}.top-actions{gap:13px}.profile-mini div:last-child{display:none}.main{padding:26px 20px}.page-head{align-items:flex-start}.page-head h1{font-size:29px}.hero{padding:24px;height:280px}.hero h2{font-size:31px}.hero-copy{width:54%}.hero-art{width:47%;top:40px;right:-5px;height:210px}.hero p{font-size:11px;max-width:245px}.hero-tag{font-size:8px;right:15px;bottom:21px}.page-footer{font-size:9px}.toast{left:50%}.guide-search{width:180px}.mission-title-row h1{font-size:26px}.mission-title-row .button{padding:8px 10px;font-size:10px}.mission-right{gap:15px}.mission-title-row{gap:10px}.guide-card{padding:17px}.page-head .eyebrow{font-size:9px}}
+@media(max-width:520px){.main{padding:23px 16px}.topbar{padding:0 16px}.profile-mini{display:none}.page-head{gap:10px}.page-head h1{font-size:26px!important;letter-spacing:-.8px}.page-head p{font-size:11px;max-width:270px}.page-head>.text-button{font-size:10px;max-width:84px;line-height:1.5}.hero{height:320px;padding:24px}.hero-copy{width:80%}.hero h2{font-size:32px;max-width:245px}.hero p{max-width:225px;font-size:11px}.hero-art{width:50%;height:180px;top:auto;bottom:15px;right:-22px;opacity:.8}.hero-tag{display:none}.hero .button{z-index:2;padding:11px 14px;margin-top:23px}.stats-strip{gap:16px;padding:19px 0 24px;justify-content:space-between}.stat-item{gap:7px}.stat-item .icon{width:16px;height:16px}.stat-value{font-size:12px}.stat-label{font-size:9px}.zones{grid-template-columns:1fr;gap:16px}.zone-head{padding:18px}.zone-card .subtitle{font-size:11px}.level-row{padding:11px 10px}.level-row .level-title{font-size:12px}.level-row .level-time{display:block;font-size:10px}.learning-head h2{font-size:17px}.learning-head span{font-size:9px}.page-footer{flex-direction:column;gap:6px}.mission-title-row{flex-direction:column}.mission-title-row h1{font-size:26px}.mission-title-row .button{align-self:flex-end;margin-top:-5px}.mission-right{display:flex}.mission-tags .pill{font-size:10px}.diagram-stage{padding:22px 10px;min-height:174px}.node-body{width:49px;height:49px;border-radius:8px}.node-body .icon{width:23px;height:23px}.node-label{font-size:10px;min-height:28px}.node-detail{font-size:8px}.diagram-arrow{min-width:8px;margin-bottom:34px}.diagram-node{width:24%}.animation-caption{padding:13px 14px}.frame-caption{font-size:11px}.panel-header{padding:13px 14px}.terminal-input-row{padding-left:12px;padding-right:12px;gap:7px}.terminal-prompt{font-size:10px}.terminal-log{padding-left:12px;padding-right:12px;font-size:10px;height:275px}.terminal-input-row input{font-size:12px}.terminal-input-row input::placeholder{font-size:10px}.terminal .terminal-title{font-size:9px}.terminal .panel-header small{font-size:8px}.guide-grid,.achievements-grid{grid-template-columns:1fr}.guide-head{flex-direction:column;align-items:stretch}.guide-search{width:100%}.completion-banner{flex-direction:column;align-items:flex-start}.completion-banner .button{align-self:flex-end}.objectives-card{padding:20px}.toast{font-size:11px}.bottom-note{align-items:flex-start}.guide-command code{font-size:11px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -19,5 +33,1012 @@
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <dialog id="modal"></dialog>
   <noscript><p>This offline game needs JavaScript enabled. Open index.html in a modern browser.</p></noscript>
+<script id="docker-quest-curriculum">
+(function (root) {
+  'use strict';
+  const zones = [
+    { id: 'harbor', name: 'The harbor', subtitle: 'Every great voyage starts here.', topic: 'Docker foundations', color: 'lime', icon: 'anchor' },
+    { id: 'dockyard', name: 'The dockyard', subtitle: 'Take the controls. Find the clues.', topic: 'Container operations', color: 'blue', icon: 'box' },
+    { id: 'workshop', name: 'The workshop', subtitle: 'Give your containers a home.', topic: 'Ports, storage & images', color: 'peach', icon: 'wrench' },
+    { id: 'open-sea', name: 'The open sea', subtitle: 'Connect the fleet. Ship together.', topic: 'Networks & Compose', color: 'purple', icon: 'ship' }
+  ];
+  const missions = [
+    {
+      id: 1, zone: 'harbor', title: 'Hello, container.', subtitle: 'Your first message from the other side.', minutes: 4, xp: 100, topic: 'run', icon: 'terminal',
+      brief: 'Welcome aboard, cadet. Before we launch the fleet, make sure the engine is awake. Inspect the Docker version, then run the hello-world image to send your first signal.',
+      objectives: [{ text: 'Inspect your Docker installation', test: 'version' }, { text: 'Run the hello-world container', test: 'hello' }],
+      hints: ['The version command tells you about the client and the engine.', 'Use docker run followed by an image name.', 'docker version\ndocker run hello-world'],
+      solution: ['docker version', 'docker run hello-world'], flag: 'DOCK{first_contact}',
+      lesson: 'An image is a read-only blueprint. A container is a running (or stopped) instance of that blueprint. Docker downloads a missing image, creates a container, and runs its main process. When that process finishes, the container stops.',
+      frames: ['You send a command to the Docker engine.', 'The engine finds the image locally, or pulls it from a registry.', 'It creates an isolated container from the image.', 'The process prints its message and exits. The stopped container still exists.']
+    },
+    {
+      id: 2, zone: 'harbor', title: 'Blueprints, not boxes', subtitle: 'Collect an image without running it.', minutes: 4, xp: 100, topic: 'image', icon: 'layers',
+      brief: 'The harbor needs an Alpine blueprint. Pull alpine:3.20, then inspect your image inventory. A downloaded image does not start a container.',
+      objectives: [{ text: 'Pull alpine:3.20', test: 'alpineImage' }, { text: 'List your local images', test: 'imagesListed' }],
+      hints: ['Image tags pick a specific version. Write them after a colon.', 'Pull downloads an image; images lists your local inventory.', 'docker pull alpine:3.20\ndocker images'],
+      solution: ['docker pull alpine:3.20', 'docker images'], flag: 'DOCK{blueprint_collected}',
+      lesson: 'Images consist of cached, read-only filesystem layers and configuration. A tag such as 3.20 is a human-readable reference; tags can change. Pulling an image stores it locally. Creating a container adds its own writable layer.',
+      frames: ['The registry holds the tagged Alpine image.', 'Docker downloads the required image layers.', 'The image is now cached on your machine.', 'The blueprint is ready. No container has been created.']
+    },
+    {
+      id: 3, zone: 'harbor', title: 'Keep the light on', subtitle: 'Start a service in the background.', minutes: 5, xp: 125, topic: 'run', icon: 'play',
+      brief: 'Start nginx:alpine as a background container named lighthouse. Then list your running containers to confirm the service is alive.',
+      objectives: [{ text: 'Run nginx:alpine detached, named lighthouse', test: 'lighthouse' }, { text: 'List the running containers', test: 'psListed' }],
+      hints: ['Detached mode lets the container run while your terminal is free.', 'Use -d for detached mode and --name for a memorable name.', 'docker run -d --name lighthouse nginx:alpine\ndocker ps'],
+      solution: ['docker run -d --name lighthouse nginx:alpine', 'docker ps'], flag: 'DOCK{lighthouse_online}',
+      lesson: 'The -d flag detaches your terminal from the container. The container keeps running while its main process is alive. A name makes it easier to refer to that container. docker ps shows running containers; docker ps -a includes stopped ones.',
+      frames: ['Choose nginx:alpine as the service blueprint.', 'Create a container named lighthouse.', 'The Nginx process keeps the container running.', 'Detached mode returns control to your terminal.']
+    },
+    {
+      id: 4, zone: 'harbor', title: 'The missing cargo', subtitle: 'Find what the running list hides.', minutes: 4, xp: 125, topic: 'lifecycle', icon: 'search', seed: 'stopped',
+      brief: 'A cargo container has disappeared from the running list. List all containers and inspect cargo to discover its exit state.',
+      objectives: [{ text: 'Include stopped containers in your list', test: 'allListed' }, { text: 'Inspect the cargo container', test: 'cargoInspected' }],
+      hints: ['A stopped container still has a filesystem and metadata.', 'The -a option includes stopped containers. Inspect gives detailed JSON.', 'docker ps -a\ndocker inspect cargo'],
+      solution: ['docker ps -a', 'docker inspect cargo'], flag: 'DOCK{nothing_is_lost}',
+      lesson: 'Stopped does not mean deleted. The container keeps its configuration and writable layer until you remove it. Inspect reveals its state, image, mounts, environment, and networking. A zero exit code usually means successful completion.',
+      frames: ['The cargo process has finished.', 'docker ps only shows running containers.', 'docker ps -a reveals the stopped cargo.', 'Inspect its state: exited, with exit code 0.']
+    },
+    {
+      id: 5, zone: 'dockyard', title: 'A controlled landing', subtitle: 'Stop it. Start it. Keep its identity.', minutes: 5, xp: 150, topic: 'lifecycle', icon: 'refresh', seed: 'lighthouse',
+      brief: 'The lighthouse needs maintenance. Stop it gracefully, then start the same container again. Leave it running for the next crew.',
+      objectives: [{ text: 'Stop lighthouse', test: 'stoppedLighthouse' }, { text: 'Restart the same lighthouse container', test: 'restartedLighthouse' }],
+      hints: ['Stop and start act on an existing container, so use its name.', 'docker run creates a new container. docker start reuses one.', 'docker stop lighthouse\ndocker start lighthouse'],
+      solution: ['docker stop lighthouse', 'docker start lighthouse'], flag: 'DOCK{back_in_service}',
+      lesson: 'docker stop sends the configured stop signal, normally SIGTERM, and later SIGKILL if the process does not exit within the timeout. docker start restarts the existing container, preserving its writable layer and settings.',
+      frames: ['The service is running in lighthouse.', 'Stop asks the main process to shut down.', 'The container stops, but its writable layer remains.', 'Start runs the same container again. Its identity is unchanged.']
+    },
+    {
+      id: 6, zone: 'dockyard', title: 'Read the signals', subtitle: 'The logs have a story to tell.', minutes: 4, xp: 150, topic: 'logs', icon: 'file', seed: 'beacon',
+      brief: 'The beacon service is reporting a warning. Read its logs, then inspect its configuration. You do not need to enter the container to investigate.',
+      objectives: [{ text: 'Read beacon logs', test: 'beaconLogs' }, { text: 'Inspect beacon configuration', test: 'beaconInspected' }],
+      hints: ['Logs capture the stdout and stderr of a container process.', 'Both logs and inspect accept the container name.', 'docker logs beacon\ndocker inspect beacon'],
+      solution: ['docker logs beacon', 'docker inspect beacon'], flag: 'DOCK{signal_received}',
+      lesson: 'docker logs reads the output captured from a container’s standard output and error streams. Applications should send useful logs there. docker inspect complements those logs with configuration and state.',
+      frames: ['The application writes a message to stdout.', 'Docker captures the process output.', 'docker logs displays the captured messages.', 'Inspect adds context such as environment and container state.']
+    },
+    {
+      id: 7, zone: 'dockyard', title: 'Inside the container', subtitle: 'A little filesystem archaeology.', minutes: 6, xp: 175, topic: 'exec', icon: 'terminal', seed: 'vault',
+      brief: 'A flag is hidden inside the running vault container. Execute ls / inside vault, then read /secret/flag.txt. The flag in that file is your mission token.',
+      objectives: [{ text: 'Explore the vault filesystem with exec', test: 'vaultListed' }, { text: 'Read /secret/flag.txt inside vault', test: 'vaultRead' }],
+      hints: ['Exec runs an extra process inside a running container.', 'Use docker exec vault followed by ls or cat.', 'docker exec vault ls /\ndocker exec vault cat /secret/flag.txt'],
+      solution: ['docker exec vault ls /', 'docker exec vault cat /secret/flag.txt'], flag: 'DOCK{inside_the_box}',
+      lesson: 'docker exec runs an additional process in an existing running container. Its paths refer to the container filesystem. Containers have their own filesystem view; a path inside one is not automatically a path on your host.',
+      frames: ['Your host sends an exec request to the engine.', 'Docker starts a second process inside vault.', 'That process reads the container filesystem.', 'The file content returns to your terminal.']
+    },
+    {
+      id: 8, zone: 'dockyard', title: 'Leave no trace', subtitle: 'Clean up containers, keep the blueprint.', minutes: 5, xp: 175, topic: 'lifecycle', icon: 'trash', seed: 'cleanup',
+      brief: 'Clear the abandoned cargo container and the running temp container. Stop temp before removing it. Keep the Alpine image so the next crew can use it.',
+      objectives: [{ text: 'Remove the stopped cargo container', test: 'cargoRemoved' }, { text: 'Stop and remove temp', test: 'tempRemoved' }, { text: 'Keep the Alpine image', test: 'keepAlpine' }],
+      hints: ['Removing a container is different from removing its image.', 'docker rm normally requires the container to be stopped.', 'docker rm cargo\ndocker stop temp\ndocker rm temp'],
+      solution: ['docker rm cargo', 'docker stop temp', 'docker rm temp'], flag: 'DOCK{tidy_dockyard}',
+      lesson: 'docker rm deletes the container, including its writable layer. It does not delete its image or named volumes. docker rmi removes an image. Force removal can interrupt running processes, so stop deliberately when possible.',
+      frames: ['The stopped cargo is ready to be removed.', 'Stop temp so its process can exit.', 'Remove both containers and their writable layers.', 'The shared image remains ready for reuse.']
+    },
+    {
+      id: 9, zone: 'workshop', title: 'Open a port', subtitle: 'Build a bridge to the browser.', minutes: 6, xp: 200, topic: 'ports', icon: 'globe',
+      brief: 'Bring up nginx:alpine as web, detached, and publish host port 8080 to container port 80. Use curl http://localhost:8080 to check the route.',
+      objectives: [{ text: 'Run web with a mapping from 8080 to 80', test: 'webPort' }, { text: 'Reach web through localhost:8080', test: 'webReached' }],
+      hints: ['The syntax is -p HOST_PORT:CONTAINER_PORT.', 'Nginx listens on port 80 inside its container.', 'docker run -d --name web -p 8080:80 nginx:alpine\ncurl http://localhost:8080'],
+      solution: ['docker run -d --name web -p 8080:80 nginx:alpine', 'curl http://localhost:8080'], flag: 'DOCK{a_window_to_the_web}',
+      lesson: 'A published port forwards traffic arriving on the host to a container port. In 8080:80, the left side belongs to your host and the right side belongs to the container. EXPOSE documents a port; it does not publish it.',
+      frames: ['Your browser requests localhost:8080.', 'The host receives the request on port 8080.', 'Docker forwards it to container port 80.', 'Nginx responds through the same mapping.']
+    },
+    {
+      id: 10, zone: 'workshop', title: 'Cargo that survives', subtitle: 'Containers come and go. Data stays.', minutes: 7, xp: 225, topic: 'volume', icon: 'database', seed: 'volume',
+      brief: 'The writer container has stored a flag in a named volume called cargo-data. Remove writer, then mount cargo-data at /data in a fresh Alpine container named reader and read /data/flag.txt.',
+      objectives: [{ text: 'Remove writer, keeping its named volume', test: 'writerRemoved' }, { text: 'Read the saved flag using a fresh reader container', test: 'volumeRead' }],
+      hints: ['Named volumes exist independently of a container.', 'Mount a named volume with -v cargo-data:/data.', 'docker rm writer\ndocker run --name reader -v cargo-data:/data alpine:3.20 cat /data/flag.txt'],
+      solution: ['docker rm writer', 'docker run --name reader -v cargo-data:/data alpine:3.20 cat /data/flag.txt'], flag: 'DOCK{data_outlives_containers}',
+      lesson: 'A named volume is storage managed by Docker outside the container’s writable layer. Removing a container does not remove the named volume. Mount the volume in another container to access the same data.',
+      frames: ['Writer saves the flag in the cargo-data volume.', 'Remove writer and its private writable layer.', 'The named volume stays on the host.', 'Mount the volume in reader. The saved flag is still there.']
+    },
+    {
+      id: 11, zone: 'workshop', title: 'Write the blueprint', subtitle: 'Your first Dockerfile, one layer at a time.', minutes: 8, xp: 225, topic: 'build', icon: 'layers', seed: 'build',
+      brief: 'Inspect the local Dockerfile with cat Dockerfile. Build this directory as an image tagged dock-app:v1, then run your new image to see its message.',
+      objectives: [{ text: 'Read the Dockerfile', test: 'dockerfileRead' }, { text: 'Build dock-app:v1 using the current directory', test: 'appBuilt' }, { text: 'Run dock-app:v1', test: 'appRan' }],
+      hints: ['The -t flag names and tags the image you build.', 'The final dot is the build context: the current directory.', 'cat Dockerfile\ndocker build -t dock-app:v1 .\ndocker run dock-app:v1'],
+      solution: ['cat Dockerfile', 'docker build -t dock-app:v1 .', 'docker run dock-app:v1'], flag: 'DOCK{built_from_scratch}',
+      lesson: 'FROM selects the base image. COPY adds files from the build context. WORKDIR sets the working directory. RUN executes at build time, while CMD supplies the default process at container start. The final dot passes the current directory as the build context.',
+      frames: ['FROM starts with the Alpine base layers.', 'WORKDIR sets /app. COPY adds the message file.', 'Docker records CMD as the default startup command.', 'Build produces dock-app:v1. Run creates a container from it.']
+    },
+    {
+      id: 12, zone: 'workshop', title: 'Configuration, delivered', subtitle: 'One image. Different environments.', minutes: 6, xp: 250, topic: 'env', icon: 'sliders',
+      brief: 'Run a detached Alpine container named signal with QUEST_MODE=production in its environment. Keep it alive with sleep 3600, then use exec signal printenv QUEST_MODE to confirm the value.',
+      objectives: [{ text: 'Run signal with QUEST_MODE=production', test: 'signalEnv' }, { text: 'Read QUEST_MODE inside signal', test: 'envRead' }],
+      hints: ['Use -e KEY=value to supply an environment variable.', 'Alpine needs a long-running command to stay alive in this simulator.', 'docker run -d --name signal -e QUEST_MODE=production alpine:3.20 sleep 3600\ndocker exec signal printenv QUEST_MODE'],
+      solution: ['docker run -d --name signal -e QUEST_MODE=production alpine:3.20 sleep 3600', 'docker exec signal printenv QUEST_MODE'], flag: 'DOCK{configured_for_launch}',
+      lesson: 'Environment variables configure a container without rebuilding its image. The -e option sets a value for the container’s process environment. Environment variables are visible through inspection, so do not treat them as secure secret storage.',
+      frames: ['The image stays the same across environments.', 'Pass QUEST_MODE=production when creating signal.', 'The process receives that value in its environment.', 'Exec starts printenv, which reads the configured value.']
+    },
+    {
+      id: 13, zone: 'open-sea', title: 'A private channel', subtitle: 'Make room for your fleet.', minutes: 6, xp: 250, topic: 'network', icon: 'network',
+      brief: 'Create a user-defined bridge network called fleet. Run a detached nginx:alpine container named api on fleet, then inspect the network to see its members.',
+      objectives: [{ text: 'Create the fleet network', test: 'fleetCreated' }, { text: 'Run api attached to fleet', test: 'apiNetwork' }, { text: 'Inspect fleet membership', test: 'fleetInspected' }],
+      hints: ['docker network create makes a user-defined bridge by default.', 'Use --network fleet when starting the container.', 'docker network create fleet\ndocker run -d --name api --network fleet nginx:alpine\ndocker network inspect fleet'],
+      solution: ['docker network create fleet', 'docker run -d --name api --network fleet nginx:alpine', 'docker network inspect fleet'], flag: 'DOCK{fleet_assembled}',
+      lesson: 'A user-defined bridge network connects containers on the same Docker host. It provides automatic name-based DNS among its containers. Containers can communicate using their internal ports without publishing those ports on the host.',
+      frames: ['Create fleet as a user-defined bridge network.', 'Attach api to that network.', 'Docker assigns api a network address.', 'Members can resolve one another by container name.']
+    },
+    {
+      id: 14, zone: 'open-sea', title: 'Talk by name', subtitle: 'Follow the packet across the fleet.', minutes: 7, xp: 275, topic: 'network', icon: 'route', seed: 'network',
+      brief: 'The api service is already on fleet. Start an Alpine scout on the same network, keep it alive, and use docker exec scout wget -qO- http://api:80 to reach the service by name.',
+      objectives: [{ text: 'Run scout on fleet', test: 'scoutNetwork' }, { text: 'Reach api by name from inside scout', test: 'dnsReached' }],
+      hints: ['The service name is a DNS name inside a user-defined network.', 'Use --network fleet. Internal traffic goes to api:80.', 'docker run -d --name scout --network fleet alpine:3.20 sleep 3600\ndocker exec scout wget -qO- http://api:80'],
+      solution: ['docker run -d --name scout --network fleet alpine:3.20 sleep 3600', 'docker exec scout wget -qO- http://api:80'], flag: 'DOCK{names_over_numbers}',
+      lesson: 'On a user-defined network, Docker DNS resolves api to its container address. Containers communicate directly on the service’s internal port. localhost inside scout refers to scout itself, not the host or api.',
+      frames: ['Scout requests http://api:80.', 'Docker DNS resolves api on the fleet network.', 'The packet travels to api’s internal port 80.', 'The response returns to scout. No host port is needed.']
+    },
+    {
+      id: 15, zone: 'open-sea', title: 'The fleet manifest', subtitle: 'Launch a stack with Compose.', minutes: 8, xp: 300, topic: 'compose', icon: 'file', seed: 'compose',
+      brief: 'Read compose.yaml to understand the web and cache services. Validate it with docker compose config, start the stack detached, and inspect its services with docker compose ps.',
+      objectives: [{ text: 'Read and validate compose.yaml', test: 'composeRead' }, { text: 'Start the Compose stack detached', test: 'composeUp' }, { text: 'List the Compose services', test: 'composeListed' }],
+      hints: ['Compose describes a collection of services declaratively.', 'Use docker compose up -d to bring the services up.', 'cat compose.yaml\ndocker compose config\ndocker compose up -d\ndocker compose ps'],
+      solution: ['cat compose.yaml', 'docker compose config', 'docker compose up -d', 'docker compose ps'], flag: 'DOCK{one_manifest_one_fleet}',
+      lesson: 'Compose defines services, networks, and volumes in YAML. docker compose config validates and resolves that configuration. up creates or updates the services; down removes the stack’s containers and networks. Named volumes remain unless you explicitly remove them.',
+      frames: ['The YAML manifest defines web and cache.', 'Compose creates a shared default network.', 'Each service starts in its own container.', 'One Compose command manages the whole stack.']
+    },
+    {
+      id: 16, zone: 'open-sea', title: 'Captain’s challenge', subtitle: 'Build it. Connect it. Prove it.', minutes: 12, xp: 500, topic: 'boss', icon: 'flag', seed: 'boss',
+      brief: 'Your final mission: build dock-app:v1, create fleet, and launch a detached nginx:alpine service named flagship with host port 8080 mapped to 80, on fleet, with cargo-data mounted at /data. Verify the HTTP response and inspect flagship. The crew is counting on you.',
+      objectives: [{ text: 'Build dock-app:v1', test: 'appBuilt' }, { text: 'Create fleet and launch flagship on it', test: 'flagshipNetwork' }, { text: 'Publish 8080:80 and mount cargo-data at /data', test: 'flagshipSetup' }, { text: 'Reach flagship and inspect it', test: 'flagshipVerified' }],
+      hints: ['Break the challenge into build, network, run, and verification.', 'Combine --name, --network, -p and -v in one run command.', 'docker build -t dock-app:v1 .\ndocker network create fleet\ndocker run -d --name flagship --network fleet -p 8080:80 -v cargo-data:/data nginx:alpine\ncurl http://localhost:8080\ndocker inspect flagship'],
+      solution: ['docker build -t dock-app:v1 .', 'docker network create fleet', 'docker run -d --name flagship --network fleet -p 8080:80 -v cargo-data:/data nginx:alpine', 'curl http://localhost:8080', 'docker inspect flagship'], flag: 'DOCK{ready_to_ship}',
+      lesson: 'You have combined images, container lifecycle, published ports, persistent storage, and networking. An image build and a service launch are separate steps. These same Docker commands transfer to a real installation; the simulator helps you rehearse their relationships.',
+      frames: ['Build the application image from its Dockerfile.', 'Create fleet and attach your flagship service.', 'Mount persistent cargo-data and publish port 8080.', 'Verify the service from the host. Your fleet is ready to ship.']
+    }
+  ];
+  const guide = [
+    ['Your engine', 'Inspect the installation and learn the difference between the client and the engine.', [['docker version', 'Client and server versions'], ['docker info', 'Engine overview']]],
+    ['Images', 'Images are reusable, read-only blueprints. A tag follows the colon.', [['docker pull alpine:3.20', 'Download an image'], ['docker images', 'List local images'], ['docker build -t dock-app:v1 .', 'Build using the current directory'], ['docker rmi alpine:3.20', 'Remove an unused image']]],
+    ['Containers', 'A container is an instance of an image, with its own writable layer and processes.', [['docker run -d --name web nginx:alpine', 'Create and start in the background'], ['docker ps', 'List running containers'], ['docker ps -a', 'Include stopped containers'], ['docker stop web', 'Stop gracefully'], ['docker start web', 'Start the same container'], ['docker rm web', 'Remove a stopped container']]],
+    ['Investigating', 'Observe a container from the host, or run a process inside it.', [['docker logs web', 'Read captured stdout and stderr'], ['docker inspect web', 'Inspect state and configuration'], ['docker exec web ls /', 'Run a command inside a container'], ['docker exec web cat /etc/os-release', 'Read a container file']]],
+    ['Ports & configuration', 'Host and container ports are separate. The mapping goes from left to right.', [['docker run -d -p 8080:80 nginx:alpine', 'Publish host 8080 → container 80'], ['docker run -d -e MODE=prod alpine:3.20 sleep 3600', 'Set a process environment value'], ['curl http://localhost:8080', 'Send an HTTP request from the host']]],
+    ['Persistent storage', 'Named volumes survive container removal. A mount makes their data visible at a container path.', [['docker volume create cargo-data', 'Create a named volume'], ['docker volume ls', 'List volumes'], ['docker run -v cargo-data:/data alpine:3.20 ls /data', 'Mount and inspect a volume'], ['docker volume inspect cargo-data', 'Inspect volume metadata']]],
+    ['Networks', 'Containers on a user-defined bridge can talk to each other by name.', [['docker network create fleet', 'Create a bridge network'], ['docker run -d --network fleet --name api nginx:alpine', 'Attach a service to fleet'], ['docker network ls', 'List networks'], ['docker network inspect fleet', 'See network members'], ['docker network connect fleet web', 'Connect an existing container']]],
+    ['Compose', 'Describe a stack in compose.yaml. Use these commands in the directory containing the file.', [['docker compose config', 'Validate and display configuration'], ['docker compose up -d', 'Create and start the stack'], ['docker compose ps', 'List services'], ['docker compose logs', 'Read service logs'], ['docker compose down', 'Remove stack containers and network']]],
+    ['Practice terminal', 'This is a teaching simulator, with a local image registry and simplified processes. It never runs commands on your computer.', [['help', 'List supported commands'], ['claim', 'Reveal the mission flag once objectives are met'], ['ls', 'List the simulated working directory'], ['cat Dockerfile', 'Read the current lab blueprint'], ['clear', 'Clear the terminal display']]]
+  ];
+  const data = { zones, missions, guide };
+  root.DQContent = data;
+  if (typeof module !== 'undefined' && module.exports) module.exports = data;
+})(globalThis);
+
+</script>
+<script id="docker-quest-engine">
+(function (root) {
+  'use strict';
+  const REGISTRY = ['hello-world:latest', 'alpine:3.20', 'alpine:latest', 'nginx:alpine', 'redis:7-alpine', 'busybox:1.36'];
+  const DOCKERFILE = 'FROM alpine:3.20\nWORKDIR /app\nCOPY message.txt .\nCMD ["cat", "/app/message.txt"]';
+  const COMPOSE = 'services:\n  web:\n    image: nginx:alpine\n    ports:\n      - "8080:80"\n  cache:\n    image: redis:7-alpine\n';
+  const normalizeImage = image => image.includes(':') ? image : image + ':latest';
+  function tokenize(input) {
+    const tokens = [];
+    let word = '', quote = null, active = false;
+    for (let i = 0; i < input.length; i++) {
+      const char = input[i];
+      if (quote) {
+        if (char === quote) quote = null;
+        else if (char === '\\' && quote === '"' && input[i + 1] === '"') word += input[++i];
+        else word += char;
+      } else if (char === '"' || char === "'") { quote = char; active = true; }
+      else if (/\s/.test(char)) { if (active) { tokens.push(word); word = ''; active = false; } }
+      else { word += char; active = true; }
+    }
+    if (quote) throw new Error('Unclosed quote. Close your quoted argument before running the command.');
+    if (active) tokens.push(word);
+    return tokens;
+  }
+  function table(headers, rows) {
+    if (!rows.length) return headers.join('   ');
+    const widths = headers.map((h, i) => Math.max(h.length, ...rows.map(row => String(row[i] ?? '').length)) + 3);
+    return [headers, ...rows].map(row => row.map((v, i) => String(v).padEnd(widths[i])).join('').trimEnd()).join('\n');
+  }
+  class Engine {
+    constructor(mission = null, snapshot = null) {
+      this.mission = mission;
+      this.state = { seq: 0, images: [], containers: [], volumes: {}, networks: { bridge: [], host: [], none: [] }, marks: {}, files: {} };
+      this.seed(mission?.seed);
+      if (snapshot && this.validSnapshot(snapshot)) this.state = JSON.parse(JSON.stringify(snapshot));
+    }
+    validSnapshot(s) {
+      const record = value => value && typeof value === 'object' && !Array.isArray(value);
+      const textRecord = value => record(value) && Object.values(value).every(v => typeof v === 'string');
+      return s && Number.isInteger(s.seq) && s.seq >= 0 && Array.isArray(s.images) && s.images.length <= 1000 && s.images.every(i => typeof i === 'string') &&
+        Array.isArray(s.containers) && s.containers.length <= 1000 && s.containers.every(c => c && typeof c.id === 'string' && typeof c.name === 'string' && typeof c.image === 'string' && typeof c.network === 'string' && typeof c.command === 'string' && ['running', 'exited'].includes(c.status) && textRecord(c.ports) && textRecord(c.env) && Array.isArray(c.mounts) && c.mounts.every(m => m && typeof m.name === 'string' && typeof m.target === 'string') && textRecord(c.files) && Array.isArray(c.logs) && c.logs.every(l => typeof l === 'string')) &&
+        record(s.volumes) && Object.values(s.volumes).every(textRecord) && record(s.networks) && ['bridge', 'host', 'none'].every(n => Array.isArray(s.networks[n])) && Object.values(s.networks).every(ids => Array.isArray(ids) && ids.every(id => typeof id === 'string')) && record(s.marks) && textRecord(s.files);
+    }
+    snapshot() { return JSON.parse(JSON.stringify(this.state)); }
+    mark(key, value = true) { this.state.marks[key] = value; }
+    addImage(image) { image = normalizeImage(image); if (!this.state.images.includes(image)) this.state.images.push(image); return image; }
+    addContainer(name, image, status = 'running', extras = {}) {
+      this.addImage(image);
+      const id = (++this.state.seq).toString(16).padStart(12, 'a');
+      const c = { id, name, image: normalizeImage(image), status, detached: true, ports: {}, env: {}, mounts: [], network: 'bridge', files: { '/etc/os-release': 'NAME="Alpine Linux"\nID=alpine\nVERSION_ID=3.20.0' }, logs: [], command: '', ...extras };
+      this.state.containers.push(c);
+      if (this.state.networks[c.network]) this.state.networks[c.network].push(c.id);
+      return c;
+    }
+    seed(seed) {
+      const s = this.state;
+      if (seed === 'stopped') this.addContainer('cargo', 'alpine:3.20', 'exited', { command: 'echo delivery complete' });
+      if (seed === 'lighthouse') this.addContainer('lighthouse', 'nginx:alpine');
+      if (seed === 'beacon') this.addContainer('beacon', 'nginx:alpine', 'running', { env: { QUEST_MODE: 'development' }, logs: ['[info] beacon listening on :80', '[warn] QUEST_MODE=development; production configuration not enabled', '[info] ready for inspection'] });
+      if (seed === 'vault') this.addContainer('vault', 'alpine:3.20', 'running', { command: 'sleep 3600', files: { '/secret/flag.txt': 'DOCK{inside_the_box}', '/etc/os-release': 'NAME="Alpine Linux"\nID=alpine' } });
+      if (seed === 'cleanup') { this.addContainer('cargo', 'alpine:3.20', 'exited'); this.addContainer('temp', 'alpine:3.20', 'running', { command: 'sleep 3600' }); }
+      if (seed === 'volume') {
+        s.volumes['cargo-data'] = { '/flag.txt': 'DOCK{data_outlives_containers}' };
+        this.addContainer('writer', 'alpine:3.20', 'exited', { mounts: [{ name: 'cargo-data', target: '/data', readonly: false }], command: 'write flag to /data' });
+      }
+      if (seed === 'build' || seed === 'boss') { s.files.Dockerfile = DOCKERFILE; s.files['message.txt'] = 'Hello from your own image. Ready to ship!'; }
+      if (seed === 'compose') s.files['compose.yaml'] = COMPOSE;
+      if (seed === 'network') { s.networks.fleet = []; this.addContainer('api', 'nginx:alpine', 'running', { network: 'fleet' }); }
+      if (!this.mission) { s.files.Dockerfile = DOCKERFILE; s.files['message.txt'] = 'Hello from your own image. Ready to ship!'; s.files['compose.yaml'] = COMPOSE; }
+    }
+    container(ref) {
+      const exact = this.state.containers.find(c => c.name === ref || c.id === ref);
+      if (exact) return exact;
+      const matches = this.state.containers.filter(c => ref && c.id.startsWith(ref));
+      if (matches.length === 1) return matches[0];
+      throw new Error(matches.length > 1 ? `Container prefix ${ref} is ambiguous. Use its name or full ID.` : `No such container: ${ref || '(missing name)'}. Try docker ps -a.`);
+    }
+    removeContainer(c) {
+      this.state.containers = this.state.containers.filter(x => x.id !== c.id);
+      Object.values(this.state.networks).forEach(ids => { const i = ids.indexOf(c.id); if (i >= 0) ids.splice(i, 1); });
+    }
+    execute(input) {
+      try {
+        const args = tokenize(input.trim());
+        if (!args.length) return { output: '', topic: null };
+        if (args.some(a => ['&&', '||', '|', ';'].includes(a))) throw new Error('Run one command at a time. Shell chaining and pipes are not supported in this practice terminal.');
+        let output, topic = this.mission?.topic || 'run';
+        if (args[0] === 'clear') return { output: '', clear: true };
+        if (args[0] === 'help') return { output: 'DOCKER QUEST · practice terminal\n\nDocker: version, info, pull, images, run, ps, stop, start, restart, rm, rmi, logs, inspect, exec, build\nStorage: docker volume create | ls | inspect | rm\nNetworks: docker network create | ls | inspect | connect | disconnect | rm\nCompose: docker compose config | up -d | ps | logs | down\nHost: ls, cat <file>, curl <url>, pwd, echo, clear\nQuest: claim (reveal a flag after completing the objectives)\n\nUse ↑ / ↓ for command history, Tab for suggestions, and Ctrl+L to clear.\nThis is a simulator. It does not execute system commands or make network requests.' };
+        if (args[0] === 'claim') {
+          if (!this.mission) throw new Error('There are no flags in the sandbox. Open a campaign mission to capture one.');
+          if (!this.objectives().every(Boolean)) throw new Error('The flag is still locked. Complete the remaining mission objectives, then run claim.');
+          this.mark('claimed'); return { output: `Mission objectives verified.\n\n${this.mission.flag}\n\nPaste this flag into the capture field to finish the mission.`, flag: this.mission.flag, topic };
+        }
+        if (args[0] !== 'docker') {
+          output = this.host(args);
+          if (args[0] === 'curl') topic = 'ports';
+          return { output, topic };
+        }
+        args.shift();
+        const command = args.shift();
+        switch (command) {
+          case '--version': case 'version': this.mark('version'); output = 'Client: Docker Engine — practice edition\n Version: 27.0.0 (simulated)\n\nServer: Docker Quest offline engine\n Engine: ready\n API: simulated teaching subset'; break;
+          case 'info': output = `Docker Quest offline engine\nContainers: ${this.state.containers.length}\n Running: ${this.state.containers.filter(c => c.status === 'running').length}\nImages: ${this.state.images.length}\nStorage Driver: simulated overlay\nNetworking: simulated bridge\nNo real Docker daemon is connected.`; break;
+          case 'pull': {
+            if (args.length !== 1) throw new Error('Usage: docker pull IMAGE[:TAG]');
+            const image = normalizeImage(args[0]);
+            if (!REGISTRY.includes(image)) throw new Error(`Image ${image} is not in the offline practice registry. Available: ${REGISTRY.join(', ')}`);
+            const cached = this.state.images.includes(image); this.addImage(image); this.mark('pulled:' + image);
+            output = cached ? `Status: Image is up to date for ${image}` : `Pulling from the offline practice registry...\n✓ Base filesystem layer\n✓ Image configuration\nStatus: Downloaded newer image for ${image}`; topic = 'image'; break;
+          }
+          case 'images': output = this.images(args); topic = 'image'; break;
+          case 'image': if (args.shift() === 'ls') { output = this.images(args); topic = 'image'; } else throw new Error('Supported: docker image ls. Use docker pull, build, or rmi for other image operations.'); break;
+          case 'run': output = this.run(args); break;
+          case 'ps': output = this.ps(args); topic = 'lifecycle'; break;
+          case 'container': if (args.shift() === 'ls') { output = this.ps(args); topic = 'lifecycle'; } else throw new Error('Supported: docker container ls. Use docker run, stop, start, or rm.'); break;
+          case 'stop': case 'start': case 'restart': {
+            if (!args.length || args.some(a => a.startsWith('-'))) throw new Error(`Usage: docker ${command} CONTAINER [CONTAINER...]`);
+            const containers = args.map(ref => this.container(ref));
+            output = containers.map(c => {
+              const wasRunning = c.status === 'running';
+              c.status = command === 'stop' ? 'exited' : this.isService(c) ? 'running' : 'exited';
+              this.mark(command + ':' + c.name);
+              if (command === 'stop') this.mark('stoppedId:' + c.name, c.id);
+              if (command !== 'stop' && this.state.marks['stoppedId:' + c.name] === c.id) this.mark('restarted:' + c.name);
+              if (command === 'restart' && wasRunning) this.mark('restarted:' + c.name);
+              return c.name;
+            }).join('\n'); topic = 'lifecycle'; break;
+          }
+          case 'rm': {
+            const force = args.includes('-f') || args.includes('--force');
+            const refs = args.filter(a => a !== '-f' && a !== '--force');
+            if (!refs.length || refs.some(a => a.startsWith('-'))) throw new Error('Usage: docker rm [-f] CONTAINER [CONTAINER...]');
+            const containers = refs.map(ref => this.container(ref));
+            if (containers.some(c => c.status === 'running' && !force)) throw new Error('Cannot remove a running container. Stop it first with docker stop NAME.');
+            output = containers.map(c => { this.removeContainer(c); this.mark('removed:' + c.name); return c.name; }).join('\n'); topic = 'lifecycle'; break;
+          }
+          case 'rmi': {
+            if (args.length !== 1) throw new Error('Usage: docker rmi IMAGE');
+            const image = normalizeImage(args[0]);
+            if (!this.state.images.includes(image)) throw new Error('No such image: ' + image);
+            if (this.state.containers.some(c => c.image === image)) throw new Error('That image is used by a container. Remove the container first.');
+            this.state.images = this.state.images.filter(i => i !== image); output = `Untagged: ${image}\nDeleted: simulated image layers`; topic = 'image'; break;
+          }
+          case 'logs': {
+            const refs = args.filter(a => a !== '-f' && a !== '--follow');
+            if (refs.length !== 1) throw new Error('Usage: docker logs [-f] CONTAINER');
+            const c = this.container(refs[0]); this.mark('logs:' + c.name); output = c.logs.join('\n') || '(No output has been written to stdout or stderr.)';
+            if (refs.length !== args.length) output += '\n[Practice mode shows current logs; live following is not simulated.]'; topic = 'logs'; break;
+          }
+          case 'inspect': {
+            if (args.length !== 1) throw new Error('Usage: docker inspect CONTAINER');
+            const c = this.container(args[0]); this.mark('inspect:' + c.name);
+            output = JSON.stringify([{ Id: c.id, Name: '/' + c.name, Config: { Image: c.image, Env: Object.entries(c.env).map(([k, v]) => `${k}=${v}`) }, State: { Status: c.status, Running: c.status === 'running', ExitCode: 0 }, Mounts: c.mounts.map(m => ({ Type: 'volume', Name: m.name, Destination: m.target, RW: !m.readonly })), NetworkSettings: { Networks: { [c.network]: { IPAddress: '172.18.0.' + (this.state.containers.indexOf(c) + 2) } }, Ports: c.ports } }], null, 2); break;
+          }
+          case 'exec': {
+            while (['-i', '-t', '-it', '-ti'].includes(args[0])) args.shift();
+            if (args.length < 2) throw new Error('Usage: docker exec CONTAINER COMMAND [ARG...]');
+            const c = this.container(args.shift()); if (c.status !== 'running') throw new Error(`Container ${c.name} is not running. Start it before using exec.`);
+            output = this.inside(c, args); topic = ['curl', 'wget'].includes(args[0]) ? 'network' : 'exec'; break;
+          }
+          case 'build': {
+            let tag = null, context = null;
+            for (let i = 0; i < args.length; i++) {
+              if (args[i] === '-t' || args[i] === '--tag') tag = args[++i];
+              else if (args[i].startsWith('--tag=')) tag = args[i].slice(6);
+              else if (args[i].startsWith('-')) throw new Error('Practice build supports -t/--tag and the current-directory context.');
+              else { if (context) throw new Error('Build accepts one context. Use docker build -t NAME:TAG .'); context = args[i]; }
+            }
+            if (!tag || context !== '.') throw new Error('Usage: docker build -t NAME:TAG . — the final dot is required as the build context.');
+            if (!/^[a-z0-9][a-z0-9._/:\-]*$/.test(tag)) throw new Error('Use a lowercase image name and a valid tag.');
+            if (!this.state.files.Dockerfile) throw new Error('No Dockerfile in this mission directory. Builds are available in the workshop and sandbox.');
+            this.addImage('alpine:3.20'); this.addImage(tag); this.mark('built:' + normalizeImage(tag));
+            output = `[1/4] FROM alpine:3.20\n[2/4] WORKDIR /app\n[3/4] COPY message.txt .\n[4/4] CMD ["cat", "/app/message.txt"]\n✓ Successfully built ${normalizeImage(tag)}\n(Build steps are simulated; the bundled Dockerfile is fixed.)`; topic = 'build'; break;
+          }
+          case 'volume': output = this.volume(args); topic = 'volume'; break;
+          case 'network': output = this.network(args); topic = 'network'; break;
+          case 'compose': output = this.compose(args); topic = 'compose'; break;
+          default: throw new Error(`Unsupported Docker command: ${command || '(missing command)'}. Type help to see the practice commands.`);
+        }
+        return { output, topic };
+      } catch (error) { return { output: error.message, error: true }; }
+    }
+    images(args) {
+      if (args.some(a => !['-q', '--quiet'].includes(a))) throw new Error('Usage: docker images [-q]');
+      this.mark('imagesListed');
+      if (args.length) return this.state.images.map((_, i) => 'd0c' + String(i + 1).padStart(9, '0')).join('\n');
+      return table(['REPOSITORY', 'TAG', 'IMAGE ID', 'SIZE'], this.state.images.map((image, i) => { const colon = image.lastIndexOf(':'); return [image.slice(0, colon), image.slice(colon + 1), 'd0c' + String(i + 1).padStart(9, '0'), image.startsWith('nginx') ? '43MB' : '8MB']; }));
+    }
+    ps(args) {
+      const allowed = ['-a', '--all', '-q', '--quiet', '-aq', '-qa'];
+      if (args.some(a => !allowed.includes(a))) throw new Error('Usage: docker ps [-a] [-q]');
+      const all = args.some(a => ['-a', '--all', '-aq', '-qa'].includes(a));
+      const quiet = args.some(a => ['-q', '--quiet', '-aq', '-qa'].includes(a));
+      this.mark(all ? 'allListed' : 'psListed');
+      const list = this.state.containers.filter(c => all || c.status === 'running');
+      return quiet ? list.map(c => c.id).join('\n') : table(['CONTAINER ID', 'IMAGE', 'STATUS', 'PORTS', 'NAMES'], list.map(c => [c.id, c.image, c.status === 'running' ? 'Up (simulated)' : 'Exited (0)', Object.entries(c.ports).map(([host, port]) => `${host}->${port}/tcp`).join(', ') || '—', c.name]));
+    }
+    run(args) {
+      const opts = { detached: false, remove: false, name: null, ports: {}, env: {}, mounts: [], network: 'bridge' };
+      let image = null, command = [];
+      const valueOptions = new Set(['--name', '-p', '--publish', '-v', '--volume', '-e', '--env', '--network', '--mount']);
+      for (let i = 0; i < args.length; i++) {
+        let option = args[i], value;
+        if (!option.startsWith('-')) { image = normalizeImage(option); command = args.slice(i + 1); break; }
+        if (['-d', '--detach', '-i', '-t', '-it', '-ti', '-dit', '-dti', '-id', '-di'].includes(option)) { if (option === '--detach' || option.includes('d')) opts.detached = true; continue; }
+        if (option === '--rm') { opts.remove = true; continue; }
+        if (option.includes('=') && option.startsWith('--')) { const eq = option.indexOf('='); value = option.slice(eq + 1); option = option.slice(0, eq); }
+        else if (valueOptions.has(option)) value = args[++i];
+        if (!valueOptions.has(option)) throw new Error(`Option ${option} is not supported in practice. Use --name, -d, -p, -v, -e, --network, or --rm.`);
+        if (!value || value.startsWith('--')) throw new Error(`Missing value for ${option}.`);
+        switch (option) {
+          case '--name': opts.name = value; break;
+          case '--network': opts.network = value; break;
+          case '-p': case '--publish': {
+            const bits = value.split(':');
+            if (bits.length < 2 || bits.length > 3 || (bits.length === 3 && !['127.0.0.1', '0.0.0.0'].includes(bits[0]))) throw new Error('Port syntax: -p [127.0.0.1:]HOST_PORT:CONTAINER_PORT');
+            const host = bits[bits.length - 2], target = bits[bits.length - 1].replace(/\/tcp$/, '');
+            if (![host, target].every(x => /^\d+$/.test(x) && Number(x) > 0 && Number(x) <= 65535)) throw new Error('Ports must be numbers from 1 to 65535.');
+            opts.ports[String(Number(host))] = String(Number(target)); break;
+          }
+          case '-e': case '--env': {
+            const eq = value.indexOf('='); if (eq < 1) throw new Error('Environment syntax: -e KEY=value');
+            const key = value.slice(0, eq); if (!/^[A-Za-z_][A-Za-z0-9_]*$/.test(key)) throw new Error('Use a valid environment variable name.');
+            opts.env[key] = value.slice(eq + 1); break;
+          }
+          case '-v': case '--volume': {
+            const [name, target, mode] = value.split(':');
+            if (!name || !target?.startsWith('/') || (mode && mode !== 'ro' && mode !== 'rw')) throw new Error('Volume syntax: -v VOLUME:/absolute/container/path[:ro]');
+            if (!/^[a-zA-Z0-9][a-zA-Z0-9_.-]*$/.test(name)) throw new Error('Practice mode supports named volumes. Bind mounts to your computer are not supported.');
+            opts.mounts.push({ name, target: target.replace(/\/$/, '') || '/', readonly: mode === 'ro' }); break;
+          }
+          case '--mount': {
+            const m = Object.fromEntries(value.split(',').map(pair => { const eq = pair.indexOf('='); return eq < 0 ? [pair, true] : [pair.slice(0, eq), pair.slice(eq + 1)]; }));
+            const name = m.source || m.src, target = m.target || m.dst || m.destination;
+            if (m.type !== 'volume' || !name || !/^[a-zA-Z0-9][a-zA-Z0-9_.-]*$/.test(name) || !target?.startsWith('/')) throw new Error('Supported mount syntax: --mount type=volume,source=NAME,target=/path');
+            opts.mounts.push({ name, target: target.replace(/\/$/, '') || '/', readonly: !!m.readonly }); break;
+          }
+        }
+      }
+      if (!image) throw new Error('Usage: docker run [OPTIONS] IMAGE [COMMAND] [ARG...]');
+      if (opts.name && !/^[a-zA-Z0-9][a-zA-Z0-9_.-]*$/.test(opts.name)) throw new Error('Container names use letters, numbers, dots, underscores, and hyphens.');
+      if (opts.name && this.state.containers.some(c => c.name === opts.name)) throw new Error(`The container name ${opts.name} is already in use. Remove it or choose another name.`);
+      if (!Object.hasOwn(this.state.networks, opts.network)) throw new Error(`Network ${opts.network} not found. Create it first with docker network create ${opts.network}.`);
+      for (const port of Object.keys(opts.ports)) if (this.state.containers.some(c => c.status === 'running' && c.ports[port])) throw new Error(`Host port ${port} is already in use by a running container.`);
+      if (!this.state.images.includes(image) && !REGISTRY.includes(image)) throw new Error(`Image ${image} is not available. Build it locally or choose an image from the practice registry.`);
+      const pulled = !this.state.images.includes(image); this.addImage(image);
+      opts.mounts.forEach(m => { if (!Object.hasOwn(this.state.volumes, m.name)) this.state.volumes[m.name] = {}; });
+      const name = opts.name || 'quest_' + (this.state.seq + 1);
+      const c = this.addContainer(name, image, 'exited', { detached: opts.detached, ports: opts.ports, env: opts.env, mounts: opts.mounts, network: opts.network, command: command.join(' ') });
+      if (this.state.marks['built:' + image]) c.files['/app/message.txt'] = this.state.files['message.txt'];
+      if (!command.length && this.state.marks['built:' + image]) command = ['cat', '/app/message.txt'];
+      c.status = this.isService(c) ? 'running' : 'exited';
+      let output = '';
+      if (image === 'hello-world:latest') { output = 'Hello from Docker!\nThis message shows that your practice container ran successfully.\n\n1. The client contacted the engine.\n2. The engine found the hello-world image.\n3. It created a container and ran its process.\n4. The output arrived in your terminal, and the process exited.'; this.mark('hello'); }
+      else if (command.length && !this.isService(c)) output = this.inside(c, command);
+      else if (image.startsWith('nginx')) c.logs.push('[info] nginx started; listening on container port 80');
+      else if (image.startsWith('redis')) c.logs.push('Ready to accept connections on port 6379');
+      if (output) c.logs.push(output);
+      this.mark('run:' + name); this.mark('ran:' + image);
+      if (opts.detached) output = c.id;
+      if (opts.remove && c.status === 'exited') this.removeContainer(c);
+      return (pulled ? `Image ${image} fetched from the offline practice registry.\n` : '') + output;
+    }
+    isService(c) { return /^(sleep\s+(\d+|infinity)|tail\s+-f)/.test(c.command) || (!c.command && /^(nginx|redis):/.test(c.image)); }
+    host(args) {
+      const [cmd, ...rest] = args;
+      if (cmd === 'pwd') return '/home/cadet/mission';
+      if (cmd === 'echo') return rest.join(' ');
+      if (cmd === 'ls') return Object.keys(this.state.files).join('  ') || '(The mission working directory is empty.)';
+      if (cmd === 'cat') {
+        if (rest.length !== 1) throw new Error('Usage: cat FILE');
+        const name = rest[0].replace(/^\.\//, '');
+        if (!Object.hasOwn(this.state.files, name)) throw new Error(`cat: ${name}: No such file in the mission directory. Try ls.`);
+        if (name === 'Dockerfile') this.mark('dockerfileRead');
+        if (name === 'compose.yaml') this.mark('composeFileRead');
+        return this.state.files[name];
+      }
+      if (cmd === 'curl') { const url = rest.find(a => !a.startsWith('-')); if (!url) throw new Error('Usage: curl http://localhost:PORT'); return this.request(url, null); }
+      throw new Error(`Command not found: ${cmd}. Type help for the supported practice commands.`);
+    }
+    readFile(c, path) {
+      path = path.startsWith('/') ? path : '/' + path;
+      const mount = c.mounts.find(m => path === m.target || path.startsWith(m.target === '/' ? '/' : m.target + '/'));
+      if (mount) { const key = mount.target === '/' ? path : path.slice(mount.target.length); return this.state.volumes[mount.name]?.[key]; }
+      return c.files[path];
+    }
+    inside(c, args) {
+      const [cmd, ...rest] = args;
+      if (cmd === 'ls') {
+        this.mark('ls:' + c.name);
+        const dir = (rest.find(a => !a.startsWith('-')) || '/').replace(/\/$/, '') || '/';
+        const paths = [...Object.keys(c.files), ...c.mounts.map(m => m.target + '/'), '/bin/', '/dev/', '/tmp/', '/usr/'];
+        c.mounts.forEach(m => Object.keys(this.state.volumes[m.name] || {}).forEach(k => paths.push((m.target === '/' ? '' : m.target) + k)));
+        const prefix = dir === '/' ? '/' : dir + '/';
+        const children = [...new Set(paths.filter(p => p.startsWith(prefix)).map(p => p.slice(prefix.length).split('/')[0]).filter(Boolean))];
+        if (!children.length && !paths.includes(dir) && dir !== '/') throw new Error(`ls: ${dir}: No such directory (or no modeled files here).`);
+        return children.join('  ');
+      }
+      if (cmd === 'cat') {
+        if (!rest.length) throw new Error('Usage: docker exec NAME cat /path/to/file');
+        return rest.map(path => {
+          const value = this.readFile(c, path); if (value === undefined) throw new Error(`cat: ${path}: No such file in ${c.name}.`);
+          this.mark('read:' + c.name + ':' + path);
+          if (c.name === 'reader' && path === '/data/flag.txt' && c.mounts.some(m => m.name === 'cargo-data' && m.target === '/data')) this.mark('volumeRead');
+          return value;
+        }).join('\n');
+      }
+      if (cmd === 'printenv' || cmd === 'env') {
+        if (rest[0]) { if (!Object.hasOwn(c.env, rest[0])) throw new Error(`Environment variable ${rest[0]} is not set in ${c.name}.`); this.mark('envRead:' + c.name + ':' + rest[0]); return c.env[rest[0]]; }
+        return Object.entries(c.env).map(([k, v]) => `${k}=${v}`).join('\n');
+      }
+      if (cmd === 'pwd') return c.files['/app/message.txt'] ? '/app' : '/';
+      if (cmd === 'hostname') return c.id;
+      if (cmd === 'echo') return rest.join(' ');
+      if (cmd === 'sleep' || cmd === 'tail') return '';
+      if (cmd === 'wget' || cmd === 'curl') {
+        const url = rest.find(a => !a.startsWith('-')); if (!url) throw new Error('Specify a URL such as http://api:80.');
+        return this.request(url, c);
+      }
+      if ((cmd === 'sh' || cmd === 'bash') && rest[0] === '-c') {
+        const script = tokenize(rest[1] || '');
+        const redirect = script.indexOf('>');
+        if (redirect !== -1 && script[0] === 'echo' && redirect === script.length - 2) {
+          const path = script[redirect + 1];
+          if (!path.startsWith('/')) throw new Error('Use an absolute file path in the practice shell.');
+          const text = script.slice(1, redirect).join(' ');
+          const mount = c.mounts.find(m => path.startsWith(m.target === '/' ? '/' : m.target + '/'));
+          if (mount?.readonly) throw new Error('That volume is mounted read-only.');
+          if (mount) this.state.volumes[mount.name][mount.target === '/' ? path : path.slice(mount.target.length)] = text;
+          else c.files[path] = text;
+          return '';
+        }
+        return this.inside(c, script);
+      }
+      if (cmd === 'sh' || cmd === 'bash') throw new Error('Interactive shells are not modeled. Run a command directly: docker exec NAME ls / or docker exec NAME cat /path.');
+      throw new Error(`The practice container does not model ${cmd}. Supported: ls, cat, printenv, env, echo, hostname, pwd, wget, curl, sleep, and simple sh -c commands.`);
+    }
+    request(raw, from) {
+      let url; try { url = new URL(raw.startsWith('http') ? raw : 'http://' + raw); } catch { throw new Error('Use a valid HTTP URL.'); }
+      if (url.protocol !== 'http:') throw new Error('The practice services use HTTP. Use http://HOST:PORT.');
+      const port = url.port || '80'; let target;
+      if (from) {
+        if (['localhost', '127.0.0.1'].includes(url.hostname)) target = from;
+        else if (from.network !== 'bridge' && from.network !== 'none' && from.network !== 'host') target = this.state.containers.find(c => c.name === url.hostname && c.network === from.network);
+        if (!target) throw new Error(`Cannot resolve ${url.hostname} from ${from.name}. Put both containers on the same user-defined network.`);
+        if (target.status !== 'running' || !target.image.startsWith('nginx:') || port !== '80') throw new Error(`Connection refused at ${url.hostname}:${port}. Check the service's internal port and running state.`);
+        this.mark('reached:' + from.name + ':' + target.name);
+      } else {
+        if (!['localhost', '127.0.0.1'].includes(url.hostname)) throw new Error('Host requests in this offline simulator use localhost or 127.0.0.1. Container DNS names work inside a shared network.');
+        target = this.state.containers.find(c => c.status === 'running' && c.ports[port] === '80' && c.image.startsWith('nginx:'));
+        if (!target) throw new Error(`Connection refused at localhost:${port}. Start an Nginx container and publish ${port}:80.`);
+        this.mark('hostReached:' + target.name);
+      }
+      return `HTTP/1.1 200 OK\nServer: nginx (practice)\n\nWelcome to nginx!\nService: ${target.name}\nRoute: ${from ? from.name + ' → ' + target.name + ':80' : 'localhost:' + port + ' → ' + target.name + ':80'}`;
+    }
+    volume(args) {
+      const [command, name] = args;
+      if (command === 'ls' && args.length === 1) return table(['DRIVER', 'VOLUME NAME'], Object.keys(this.state.volumes).map(n => ['local', n]));
+      if (!name || args.length !== 2) throw new Error('Usage: docker volume create|inspect|rm NAME, or docker volume ls');
+      if (command === 'create') { if (!/^[a-zA-Z0-9][a-zA-Z0-9_.-]*$/.test(name)) throw new Error('Invalid volume name.'); if (!Object.hasOwn(this.state.volumes, name)) this.state.volumes[name] = {}; return name; }
+      if (!Object.hasOwn(this.state.volumes, name)) throw new Error('No such volume: ' + name);
+      if (command === 'inspect') return JSON.stringify([{ Name: name, Driver: 'local', Mountpoint: '/var/lib/docker/volumes/' + name + '/_data', Mode: 'simulated' }], null, 2);
+      if (command === 'rm') { if (this.state.containers.some(c => c.mounts.some(m => m.name === name))) throw new Error('Volume is in use by a container. Remove that container first.'); delete this.state.volumes[name]; return name; }
+      throw new Error('Supported volume commands: create, ls, inspect, rm.');
+    }
+    network(args) {
+      const [command, name, ref] = args;
+      if (command === 'ls' && args.length === 1) return table(['NETWORK ID', 'NAME', 'DRIVER'], Object.keys(this.state.networks).map((n, i) => ['net' + i.toString().padStart(9, '0'), n, ['host', 'none'].includes(n) ? n : 'bridge']));
+      if (!name) throw new Error('Usage: docker network create|inspect|rm NAME, or docker network connect|disconnect NETWORK CONTAINER');
+      if (command === 'create') { if (args.length !== 2 || !/^[a-zA-Z0-9][a-zA-Z0-9_.-]*$/.test(name)) throw new Error('Usage: docker network create NAME'); if (Object.hasOwn(this.state.networks, name)) throw new Error('Network already exists: ' + name); this.state.networks[name] = []; this.mark('networkCreated:' + name); return 'net-' + name; }
+      if (!Object.hasOwn(this.state.networks, name)) throw new Error('No such network: ' + name);
+      if (command === 'inspect' && args.length === 2) { this.mark('networkInspected:' + name); return JSON.stringify([{ Name: name, Driver: 'bridge', Containers: Object.fromEntries(this.state.containers.filter(c => this.state.networks[name].includes(c.id)).map(c => [c.id, { Name: c.name, IPv4Address: '172.18.0.' + (this.state.containers.indexOf(c) + 2) + '/16' }])) }], null, 2); }
+      if ((command === 'connect' || command === 'disconnect') && args.length === 3) {
+        if (['host', 'none'].includes(name)) throw new Error('Practice connections use bridge networks.');
+        const c = this.container(ref);
+        if (command === 'connect') { if (c.network === name) throw new Error('Container is already on that network.'); Object.values(this.state.networks).forEach(ids => { const i = ids.indexOf(c.id); if (i >= 0) ids.splice(i, 1); }); c.network = name; this.state.networks[name].push(c.id); }
+        else { if (c.network !== name) throw new Error('Container is not on that network.'); this.state.networks[name] = this.state.networks[name].filter(id => id !== c.id); c.network = 'none'; this.state.networks.none.push(c.id); }
+        return '(Network membership updated. Practice containers have one active network.)';
+      }
+      if (command === 'rm' && args.length === 2) { if (['bridge', 'host', 'none'].includes(name)) throw new Error('Built-in networks cannot be removed.'); if (this.state.networks[name].length) throw new Error('Network has active endpoints. Disconnect or remove its containers first.'); delete this.state.networks[name]; return name; }
+      throw new Error('Supported network commands: create, ls, inspect, connect, disconnect, rm.');
+    }
+    compose(args) {
+      if (!this.state.files['compose.yaml']) throw new Error('No compose.yaml in this mission. Try Compose in level 15 or the sandbox.');
+      const command = args.shift();
+      if (command === 'config' && !args.length) { this.mark('composeValidated'); return COMPOSE + '\nnetworks:\n  default:\n    name: quest_default'; }
+      if (command === 'up') {
+        if (!args.length || args.some(a => !['-d', '--detach'].includes(a))) throw new Error('Practice mode supports docker compose up -d.');
+        for (const name of ['quest-web-1', 'quest-cache-1']) if (this.state.containers.some(c => c.name === name && !c.compose)) throw new Error('Container name conflict: ' + name);
+        if (!Object.hasOwn(this.state.networks, 'quest_default')) this.state.networks.quest_default = [];
+        for (const [service, image, ports] of [['web', 'nginx:alpine', { 8080: '80' }], ['cache', 'redis:7-alpine', {}]]) {
+          const existing = this.state.containers.find(c => c.name === 'quest-' + service + '-1');
+          if (service === 'web' && this.state.containers.some(c => c !== existing && c.status === 'running' && c.ports['8080'])) throw new Error('Host port 8080 is already in use. Stop the other container first.');
+          if (existing) existing.status = 'running';
+          else this.addContainer('quest-' + service + '-1', image, 'running', { network: 'quest_default', ports, compose: true, logs: [`[${service}] service ready`] });
+        }
+        this.mark('composeUp'); return '✓ Network quest_default created\n✓ Container quest-web-1 running\n✓ Container quest-cache-1 running';
+      }
+      if (command === 'ps' && !args.length) { this.mark('composeListed'); return table(['NAME', 'SERVICE', 'STATUS', 'PORTS'], this.state.containers.filter(c => c.compose).map(c => [c.name, c.name.includes('web') ? 'web' : 'cache', c.status === 'running' ? 'Up' : 'Exited', c.ports['8080'] ? '8080->80/tcp' : '6379/tcp'])); }
+      if (command === 'logs' && !args.length) return this.state.containers.filter(c => c.compose).map(c => c.name + ' | ' + c.logs.join('\n')).join('\n') || '(No Compose services running.)';
+      if (command === 'down' && !args.length) { this.state.containers.filter(c => c.compose).forEach(c => this.removeContainer(c)); delete this.state.networks.quest_default; this.mark('composeDown'); return '✓ Compose containers removed\n✓ Network quest_default removed\nNamed volumes preserved.'; }
+      throw new Error('Supported: docker compose config | up -d | ps | logs | down');
+    }
+    objectives() { return this.mission ? this.mission.objectives.map(o => !!this.check(o.test)) : []; }
+    check(test) {
+      const s = this.state, m = s.marks, find = name => s.containers.find(c => c.name === name), live = name => find(name)?.status === 'running';
+      const tests = {
+        version: () => m.version, hello: () => m.hello,
+        alpineImage: () => s.images.includes('alpine:3.20') && m['pulled:alpine:3.20'], imagesListed: () => m.imagesListed,
+        lighthouse: () => live('lighthouse') && find('lighthouse').detached && find('lighthouse').image === 'nginx:alpine', psListed: () => m.psListed,
+        allListed: () => m.allListed, cargoInspected: () => m['inspect:cargo'],
+        stoppedLighthouse: () => m['stop:lighthouse'], restartedLighthouse: () => m['restarted:lighthouse'] && live('lighthouse'),
+        beaconLogs: () => m['logs:beacon'], beaconInspected: () => m['inspect:beacon'],
+        vaultListed: () => m['ls:vault'], vaultRead: () => m['read:vault:/secret/flag.txt'],
+        cargoRemoved: () => m['removed:cargo'] && !find('cargo'), tempRemoved: () => m['stop:temp'] && m['removed:temp'] && !find('temp'), keepAlpine: () => s.images.includes('alpine:3.20'),
+        webPort: () => live('web') && find('web').image === 'nginx:alpine' && find('web').detached && find('web').ports['8080'] === '80', webReached: () => m['hostReached:web'] && live('web'),
+        writerRemoved: () => m['removed:writer'] && !find('writer') && Object.hasOwn(s.volumes, 'cargo-data'), volumeRead: () => m.volumeRead,
+        dockerfileRead: () => m.dockerfileRead, appBuilt: () => m['built:dock-app:v1'] && s.images.includes('dock-app:v1'), appRan: () => m['ran:dock-app:v1'],
+        signalEnv: () => live('signal') && find('signal').detached && find('signal').image.startsWith('alpine:') && find('signal').env.QUEST_MODE === 'production', envRead: () => m['envRead:signal:QUEST_MODE'] && find('signal')?.env.QUEST_MODE === 'production',
+        fleetCreated: () => Object.hasOwn(s.networks, 'fleet') && m['networkCreated:fleet'], apiNetwork: () => live('api') && find('api').image === 'nginx:alpine' && find('api').detached && find('api').network === 'fleet', fleetInspected: () => m['networkInspected:fleet'],
+        scoutNetwork: () => live('scout') && find('scout').image.startsWith('alpine:') && find('scout').detached && find('scout').network === 'fleet', dnsReached: () => m['reached:scout:api'] && live('api') && live('scout') && find('scout').network === find('api').network,
+        composeRead: () => m.composeFileRead && m.composeValidated, composeUp: () => m.composeUp && ['quest-web-1', 'quest-cache-1'].every(live), composeListed: () => m.composeListed,
+        flagshipNetwork: () => Object.hasOwn(s.networks, 'fleet') && m['networkCreated:fleet'] && live('flagship') && find('flagship').network === 'fleet' && find('flagship').detached && find('flagship').image === 'nginx:alpine',
+        flagshipSetup: () => live('flagship') && find('flagship').ports['8080'] === '80' && find('flagship').mounts.some(v => v.name === 'cargo-data' && v.target === '/data'),
+        flagshipVerified: () => m['hostReached:flagship'] && m['inspect:flagship'] && live('flagship')
+      };
+      return tests[test]?.() || false;
+    }
+  }
+  root.DQEngine = Engine;
+  root.DQTokenize = tokenize;
+  if (typeof module !== 'undefined' && module.exports) module.exports = { Engine, tokenize, REGISTRY };
+})(globalThis);
+
+</script>
+<script id="docker-quest-app">
+(() => {
+  'use strict';
+  const LOGO_DATA_URI = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTciIGZpbGw9IiNjNmYyN2MiLz48ZyBmaWxsPSIjMTcyMTFiIj48cmVjdCB4PSIxMyIgeT0iMjUiIHdpZHRoPSIxMCIgaGVpZ2h0PSI5IiByeD0iMS41Ii8+PHJlY3QgeD0iMjYiIHk9IjI1IiB3aWR0aD0iMTAiIGhlaWdodD0iOSIgcng9IjEuNSIvPjxyZWN0IHg9IjI2IiB5PSIxMyIgd2lkdGg9IjEwIiBoZWlnaHQ9IjkiIHJ4PSIxLjUiLz48cmVjdCB4PSIzOSIgeT0iMjUiIHdpZHRoPSIxMCIgaGVpZ2h0PSI5IiByeD0iMS41Ii8+PHBhdGggZD0iTTkgMzhoMzlsNy02YzIgMTQtOCAyMy0yNSAyM0MxOCA1NSAxMSA0OSA5IDM4WiIvPjwvZz48L3N2Zz4K";
+  const { missions, zones, guide } = DQContent;
+  const $ = selector => document.querySelector(selector);
+  const escape = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+  const paths = {
+    compass: '<circle cx="12" cy="12" r="9"/><path d="m16 8-2.5 5.5L8 16l2.5-5.5Z"/>',
+    terminal: '<rect x="3" y="4" width="18" height="16" rx="3"/><path d="m7 9 3 3-3 3m6 0h4"/>',
+    book: '<path d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1Zm0 0v15"/>',
+    trophy: '<path d="M7 3h10v6a5 5 0 0 1-10 0Zm0 2H3v3a4 4 0 0 0 5 4m9-7h4v3a4 4 0 0 1-5 4M12 14v6m-4 1h8"/>',
+    arrow: '<path d="M4 12h16m-6-6 6 6-6 6"/>',
+    chevron: '<path d="m9 6 6 6-6 6"/>',
+    anchor: '<circle cx="12" cy="5" r="2"/><path d="M12 7v14M7 11h10M3 15v2a9 9 0 0 0 18 0v-2m-18 0 3 2m15-2-3 2"/>',
+    box: '<path d="m12 3 9 5v9l-9 5-9-5V8Zm0 10 9-5M12 13v9M3 8l9 5m-4-7 9 5"/>',
+    wrench: '<path d="M14 6a6 6 0 0 0-8 8L3 19a2 2 0 0 0 3 3l5-4a6 6 0 0 0 8-8l-4 4-5-5Z"/>',
+    ship: '<path d="M4 13v5l8 4 8-4v-5l-8-4Zm8-4v12M7 11V5h10v6M10 5V2h4v3M2 22c2-1 3-1 5 0 2-1 3-1 5 0 2-1 3-1 5 0 2-1 3-1 5 0"/>',
+    layers: '<path d="m12 3 10 5-10 5L2 8Zm-9 10 9 5 9-5M3 18l9 5 9-5"/>',
+    play: '<path d="m8 4 12 8-12 8Z"/>',
+    pause: '<path d="M8 5v14M16 5v14"/>',
+    search: '<circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/>',
+    refresh: '<path d="M20 7A9 9 0 1 0 21 14m-1-7V2m0 5h-5"/>',
+    file: '<path d="M13 2H5v20h14V8Zm0 0v6h6M8 12h8M8 16h6"/>',
+    trash: '<path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7"/>',
+    globe: '<circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/>',
+    database: '<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14a8 3 0 0 0 16 0V5M4 12a8 3 0 0 0 16 0"/>',
+    sliders: '<path d="M4 6h4m4 0h8M4 12h10m4 0h2M4 18h2m4 0h10M8 3v6m6 0v6m-8 0v6"/>',
+    network: '<rect x="9" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/><path d="M12 8v4M5 16v-4h14v4"/>',
+    route: '<circle cx="5" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><path d="M7 5h8a4 4 0 0 1 0 8H9a4 4 0 0 0 0 6h8"/>',
+    flag: '<path d="M5 22V3m0 0c5-3 9 3 14 0v10c-5 3-9-3-14 0"/>',
+    lock: '<rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4M12 14v3"/>',
+    check: '<path d="m5 12 4 4L19 6"/>',
+    bolt: '<path d="m13 2-9 12h7l-1 8 10-13h-7Z"/>',
+    clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    shield: '<path d="m12 2 9 4v6c0 5-9 10-9 10S3 17 3 12V6Zm-4 10 3 3 5-6"/>',
+    settings: '<path d="m9 3-1 3-3 1-2 3 2 2v3l3 1 1 3h6l1-3 3-1v-3l2-2-2-3-3-1-1-3Z"/><circle cx="12" cy="11" r="3"/>',
+    info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v.01"/>',
+    download: '<path d="M12 3v12m-5-5 5 5 5-5M4 15v6h16v-6"/>',
+    upload: '<path d="M12 16V3m-5 5 5-5 5 5M4 16v5h16v-5"/>',
+    close: '<path d="m6 6 12 12M6 18 18 6"/>',
+    bulb: '<path d="M8 16a7 7 0 1 1 8 0v3H8Zm1 6h6M12 3v2"/>',
+    copy: '<rect x="8" y="8" width="13" height="13" rx="2"/><path d="M16 8V3H3v13h5"/>',
+    menu: '<path d="M3 6h18M3 12h18M3 18h18"/>',
+    monitor: '<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M12 17v4m-4 0h8"/>',
+    cloud: '<path d="M6 18a5 5 0 0 1-1-10 7 7 0 0 1 13-1 6 6 0 0 1 0 11Z"/>',
+    heart: '<path d="M12 21 3 12A6 6 0 0 1 12 4a6 6 0 0 1 9 8Z"/>',
+    step: '<path d="m5 4 12 8-12 8Zm14 0v16"/>'
+  };
+  const icon = name => `<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">${paths[name] || paths.box}</svg>`;
+  const KEY = 'dockerquest:progress:v1';
+  let storageOK = true;
+  const defaults = () => ({ version: 1, completed: [], hints: {}, drafts: {}, sandboxCommands: 0, lastMission: 1, motion: !matchMedia('(prefers-reduced-motion: reduce)').matches });
+  function sanitize(raw) {
+    if (!raw || raw.version !== 1 || !Array.isArray(raw.completed)) throw new Error('This is not a supported Docker Quest progress file.');
+    const completed = [...new Set(raw.completed)].sort((a, b) => a - b);
+    if (completed.some((id, i) => !Number.isInteger(id) || id !== i + 1 || id > missions.length)) throw new Error('Progress must contain a continuous sequence of completed mission numbers, beginning at 1.');
+    const result = { ...defaults(), completed };
+    if (raw.hints && typeof raw.hints === 'object') missions.forEach(m => { if (Number.isInteger(raw.hints[m.id]) && raw.hints[m.id] >= 0 && raw.hints[m.id] <= 3) result.hints[m.id] = raw.hints[m.id]; });
+    if (raw.drafts && typeof raw.drafts === 'object') [...missions.map(m => String(m.id)), 'sandbox'].forEach(key => {
+      const d = raw.drafts[key];
+      if (d && new DQEngine().validSnapshot(d.world) && Array.isArray(d.transcript)) result.drafts[key] = { world: d.world, transcript: d.transcript.filter(t => t && typeof t.text === 'string' && t.text.length < 30000 && ['command', 'output', 'error', 'welcome', 'success'].includes(t.type)).slice(-100), history: Array.isArray(d.history) ? d.history.filter(x => typeof x === 'string' && x.length < 2000).slice(-100) : [] };
+    });
+    result.sandboxCommands = Number.isInteger(raw.sandboxCommands) ? Math.min(Math.max(raw.sandboxCommands, 0), 100000) : 0;
+    result.lastMission = Number.isInteger(raw.lastMission) && raw.lastMission >= 1 && raw.lastMission <= Math.min(completed.length + 1, 16) ? raw.lastMission : Math.min(completed.length + 1, 16);
+    if (typeof raw.motion === 'boolean') result.motion = raw.motion;
+    return result;
+  }
+  let progress;
+  try { const raw = localStorage.getItem(KEY); progress = raw ? sanitize(JSON.parse(raw)) : defaults(); localStorage.setItem(KEY, JSON.stringify(progress)); }
+  catch { progress = defaults(); storageOK = false; }
+  let view = 'campaign', mission = null, engine = null, transcript = [], history = [], historyIndex = 0, draftCommand = '';
+  let visualTopic = 'run', frame = 0, playing = false, animationTimer = null, toastTimer = null;
+  let search = '';
+  const narrowScreen = matchMedia('(max-width: 760px)');
+  function syncMenu() {
+    const sidebar = $('.sidebar');
+    const hidden = narrowScreen.matches && !document.body.classList.contains('menu-open');
+    if (sidebar) { sidebar.inert = hidden; sidebar.setAttribute('aria-hidden', String(hidden)); }
+    $('.mobile-menu')?.setAttribute('aria-expanded', String(!hidden && narrowScreen.matches));
+  }
+  narrowScreen.addEventListener('change', syncMenu);
+  const xp = () => missions.filter(m => progress.completed.includes(m.id)).reduce((sum, m) => sum + m.xp, 0);
+  const rank = () => progress.completed.length === 16 ? 'Fleet captain' : progress.completed.length >= 12 ? 'First officer' : progress.completed.length >= 8 ? 'Engineer' : progress.completed.length >= 4 ? 'Deckhand' : 'Docker cadet';
+  const nextMission = () => missions.find(m => !progress.completed.includes(m.id)) || missions[15];
+  const unlocked = id => id === 1 || progress.completed.includes(id - 1);
+  const navItem = (id, name, image, extra = '') => `<button data-action="nav" data-view="${id}" class="${view === id || (view === 'mission' && id === 'campaign') ? 'active' : ''}" ${view === id || (view === 'mission' && id === 'campaign') ? 'aria-current="page"' : ''}>${icon(image)}<span>${name}</span>${extra ? `<span class="nav-count">${extra}</span>` : ''}</button>`;
+  function save() {
+    if (engine && (view === 'mission' || view === 'sandbox')) progress.drafts[mission?.id || 'sandbox'] = { world: engine.snapshot(), transcript: transcript.slice(-100), history: history.slice(-100) };
+    try { localStorage.setItem(KEY, JSON.stringify(progress)); storageOK = true; }
+    catch { if (storageOK) toast('Browser storage is unavailable. Export progress to keep your voyage.'); storageOK = false; }
+  }
+  function toast(message) { const el = $('#toast'); el.textContent = message; el.classList.add('visible'); clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove('visible'), 4000); }
+  function render() {
+    stopAnimation();
+    document.body.classList.toggle('motion-off', !progress.motion);
+    const current = { campaign: 'Campaign', mission: mission?.title, sandbox: 'Sandbox', guide: 'Field guide', achievements: 'Achievements' }[view];
+    $('#app').innerHTML = `<div class="shell"><button class="menu-overlay" data-action="menu" aria-label="Close navigation"></button>
+      <aside class="sidebar" aria-label="Main navigation"><a href="#campaign" class="brand" data-action="home"><img src="${LOGO_DATA_URI}" alt=""><div><strong>Docker Quest</strong><span>Learn. Build. Ship.</span></div></a>
+      <p class="eyebrow nav-caption">Your expedition</p><nav class="nav">${navItem('campaign', 'Campaign', 'compass', '16')}${navItem('sandbox', 'Sandbox', 'terminal')}${navItem('guide', 'Field guide', 'book')}${navItem('achievements', 'Achievements', 'trophy')}</nav>
+      <div class="sidebar-card">${icon('box')}<h4>Small containers. Big skills.</h4><p>Learn by doing, one mission at a time. Your next breakthrough is a command away.</p></div>
+      <div class="sidebar-foot"><div class="offline-indicator"><span class="dot"></span>Offline by design</div><p>No account. No cloud. Just you.</p><div class="utility-actions"><button data-action="settings" aria-label="Settings and progress">${icon('settings')}</button><button data-action="about" aria-label="How to play">${icon('info')}</button><button data-action="download-game" aria-label="Download offline game">${icon('download')}</button><button data-action="export" aria-label="Export progress">${icon('file')}</button></div></div></aside>
+      <header class="topbar"><button class="mobile-menu" data-action="menu" aria-label="Toggle navigation" aria-expanded="${document.body.classList.contains('menu-open')}">${icon('menu')}</button><div class="breadcrumb">Your expedition ${icon('chevron')} <strong>${escape(current)}</strong></div><div class="top-actions"><div class="xp-count">${icon('bolt')}<span id="xp-value">${xp().toLocaleString()} XP</span></div><div class="profile-mini"><span class="avatar">C</span><div>Explorer<small>${rank()}</small></div></div></div></header>
+      <main class="main" id="main">${view === 'campaign' ? dashboard() : view === 'mission' || view === 'sandbox' ? lab() : view === 'guide' ? fieldGuide() : achievements()}
+      <footer class="page-footer"><span>Made for curious minds. Built for the offline world.</span><span>${icon('shield')} Your progress stays on this device</span></footer></main></div>`;
+    if (view === 'mission' || view === 'sandbox') { drawTerminal(); updateObjectives(); drawAnimation(); if (view === 'sandbox') drawInventory(); attachTerminalKeyboard(); }
+    syncMenu();
+    if (!storageOK) toast('Progress cannot be saved in this browser. Use Export progress to keep your work.');
+    document.title = `${current} — Docker Quest`;
+  }
+  function shipArt() {
+    const container = (x, y, color, light, dark) => `<g transform="translate(${x} ${y})"><path d="m0 19 54 31 54-31-54-31Z" fill="${light}"/><path d="m0 19 54 31v42L0 61Z" fill="${color}"/><path d="m54 50 54-31v42L54 92Z" fill="${dark}"/><g stroke="#102a2250" stroke-width="2"><path d="m8 27 0 32m10-26v32m10-26v32m10-26v32m10-26v32M63 49v32m10-37v32m10-37v32m10-37v32m10-37v32"/></g></g>`;
+    return `<svg class="hero-art" viewBox="0 0 380 270" role="img" aria-label="A cargo ship carrying stacked containers along a dotted route"><defs><linearGradient id="hull" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#47644b"/><stop offset="1" stop-color="#243b32"/></linearGradient></defs><g fill="none" stroke="#9cbf7330"><path d="m20 203 168 65 170-92M6 222l102 39m128-14 120-52M288 55l59 31-20 12"/><path class="signal" d="M32 68C65 8 178 9 176 44S326 53 341 128" stroke="#bce57865"/><circle cx="30" cy="68" r="4" stroke="#c6f27c"/><circle cx="341" cy="129" r="4" stroke="#c6f27c"/></g><ellipse cx="204" cy="214" rx="121" ry="25" fill="#071c1830"/><path d="m51 159 135 79 144-76-136-73Z" fill="#53684d"/><path d="m51 159 135 79v25c-49-12-98-45-130-82Z" fill="url(#hull)"/><path d="m186 238 144-76-9 30c-27 28-80 62-135 71Z" fill="#203e32"/><path d="m58 166 128 73 135-72" fill="none" stroke="#9bb98070" stroke-width="2"/><g class="float-cargo">${container(103, 112, '#698855', '#aac482', '#48633d')}${container(158, 81, '#82a86a', '#c3db94', '#5a8052')}${container(158, 37, '#a7c879', '#d5eaa8', '#739859')}</g><g class="float-cargo second">${container(49, 79, '#87aa66', '#bddb8c', '#5a7d48')}</g><path d="m242 148 24-13 21 12-23 14Z" fill="#adbd98"/><path d="m242 148 22 13v30l-22-12Z" fill="#799174"/><path d="m264 161 23-14v30l-23 14Z" fill="#516e52"/><path d="m248 153 10 6v7l-10-6m21 2 11-6v7l-11 6" fill="#20392d"/><path d="M220 29v18m-9-9h18" stroke="#c6f27c60"/><circle cx="300" cy="41" r="2" fill="#c6f27c60"/><circle cx="88" cy="35" r="2" fill="#c6f27c60"/></svg>`;
+  }
+  function dashboard() {
+    const next = nextMission(), all = progress.completed.length === 16;
+    return `<div class="page-head"><div><p class="eyebrow">A little practice. A lot of possibility.</p><h1>${progress.completed.length ? 'Welcome back, explorer.' : 'Ready to learn Docker?'}</h1><p>From your first container to a fleet of services. One flag at a time.</p></div><button class="text-button" data-action="about">How it works ${icon('arrow')}</button></div>
+      <div class="dashboard-grid"><div><section class="card hero"><div class="hero-copy"><div class="eyebrow">Your hands-on adventure</div><h2>Build skills.<br>Ship <em>containers.</em></h2><p>Real commands. Visual explanations.<br>16 missions to turn Docker from<br>a mystery into muscle memory.</p><button class="button" data-action="mission" data-id="${next.id}">${all ? 'Revisit the final challenge' : progress.drafts[next.id] ? 'Resume your adventure' : progress.completed.length ? 'Continue your adventure' : 'Start your adventure'} ${icon('arrow')}</button></div>${shipArt()}<span class="hero-tag"><span class="dot"></span> LOCAL ENGINE · READY</span></section>
+      <div class="stats-strip"><div class="stat-item">${icon('flag')}<div><div class="stat-value">${progress.completed.length} / 16</div><div class="stat-label">Flags captured</div></div></div><div class="stat-item">${icon('layers')}<div><div class="stat-value">4 chapters</div><div class="stat-label">One complete journey</div></div></div><div class="stat-item">${icon('clock')}<div><div class="stat-value">At your pace</div><div class="stat-label">No timers. No pressure.</div></div></div></div>
+      <div class="learning-head"><h2>Your learning path</h2><span>Start small. Level up. Set sail.</span></div><div class="zones">${zones.map((z, i) => {
+        const levels = missions.filter(m => m.zone === z.id), done = levels.filter(m => progress.completed.includes(m.id)).length;
+        return `<section class="card zone-card ${z.color}"><div class="zone-head"><div class="zone-top"><div class="zone-icon">${icon(z.icon)}</div><span class="chapter">CHAPTER 0${i + 1} / 04</span></div><h3>${z.name}</h3><p class="subtitle">${z.subtitle}</p><div class="zone-progress" role="progressbar" aria-label="${z.name} progress" aria-valuenow="${done}" aria-valuemin="0" aria-valuemax="4"><span style="width:${done * 25}%"></span></div></div><div class="level-list">${levels.map(m => {
+          const complete = progress.completed.includes(m.id), current = m.id === next.id && !all, open = unlocked(m.id);
+          return `<button class="level-row ${complete ? 'complete' : current ? 'current' : ''}" data-action="mission" data-id="${m.id}" ${open ? '' : 'disabled'} aria-label="Mission ${m.id}: ${m.title}${complete ? ', complete' : !open ? ', locked; complete the previous mission' : ''}"><span class="level-num">${complete ? icon('check') : String(m.id).padStart(2, '0')}</span><span class="level-title">${m.title}</span><span class="level-time">${m.minutes}m</span>${icon(!open ? 'lock' : 'chevron')}</button>`;
+        }).join('')}</div></section>`;
+      }).join('')}</div><p class="bottom-note">${icon('info')} Capture a flag to unlock the next mission. Replay any completed mission, anytime.</p></div>${voyage()}</div>`;
+  }
+  function voyage() {
+    const completed = progress.completed.length, circumference = 389.56;
+    return `<aside class="card voyage"><h3>Your voyage</h3><div class="progress-ring"><svg viewBox="0 0 144 144" aria-hidden="true"><circle cx="72" cy="72" r="62"/><circle class="value" cx="72" cy="72" r="62" stroke-dasharray="${circumference}" stroke-dashoffset="${circumference * (1 - completed / 16)}"/></svg><div class="ring-content"><strong>${completed}</strong><span> / 16</span><small>missions completed</small></div></div><div class="rank-title"><h4>${rank()}</h4><p>${completed === 16 ? 'The whole ocean is yours.' : 'From cadet to captain, command by command.'}</p></div><div class="voyage-divider"></div><p class="eyebrow">Your skill cargo</p>${zones.map(z => { const done = missions.filter(m => m.zone === z.id && progress.completed.includes(m.id)).length; return `<div class="skill-row ${z.color}"><div class="skill-meta"><span>${z.topic}</span><span>${done}/4</span></div><div class="skill-track"><span style="width:${done * 25}%"></span></div></div>`; }).join('')}<div class="voyage-divider"></div><p class="eyebrow">Milestones ahead</p><div class="mini-badges">${[['First launch', 'bolt', 1], ['Image builder', 'layers', 11], ['Fleet captain', 'trophy', 16]].map(([name, img, level]) => `<div class="mini-badge ${progress.completed.includes(level) ? 'earned' : ''}"><div class="badge-icon">${icon(img)}</div>${name}</div>`).join('')}</div><p class="voyage-note">A good engineer is just a curious beginner who kept going.</p></aside>`;
+  }
+  const visuals = {
+    run: { title: 'From image to container', nodes: [['terminal', 'Your terminal', 'docker run'], ['cloud', 'Registry', 'image source'], ['layers', 'Local image', 'read-only'], ['box', 'Container', 'isolated process']], frames: ['You send a command to the Docker engine.', 'The engine pulls a missing image from its registry.', 'The image is cached as read-only filesystem layers.', 'Docker creates a container and starts its main process.'] },
+    image: { title: 'A blueprint in layers', nodes: [['cloud', 'Registry', 'alpine:3.20'], ['download', 'Pull', 'download layers'], ['layers', 'Image cache', 'on your host'], ['box', 'Ready to run', 'no process yet']], frames: ['Choose a tagged image in the registry.', 'Pull downloads the required layers.', 'Docker stores the image on your machine.', 'You have a blueprint. Run creates its container.'] },
+    lifecycle: { title: 'The life of a container', nodes: [['box', 'Created', 'new instance'], ['play', 'Running', 'process alive'], ['pause', 'Stopped', 'layer retained'], ['trash', 'Removed', 'layer deleted']], frames: ['Create a container from an image.', 'Start its process. Running containers appear in docker ps.', 'Stop its process. Its filesystem and identity remain.', 'Remove the container. The source image stays cached.'] },
+    logs: { title: 'Follow the signal', nodes: [['box', 'Application', 'in container'], ['file', 'stdout / stderr', 'process output'], ['database', 'Docker logs', 'captured output'], ['terminal', 'Your terminal', 'docker logs']], frames: ['The container’s application runs.', 'It writes messages to standard output and error.', 'Docker captures those output streams.', 'You read them with docker logs.'] },
+    exec: { title: 'A process inside a process space', nodes: [['terminal', 'Your terminal', 'docker exec'], ['sliders', 'Engine', 'exec request'], ['box', 'Container', 'new process'], ['file', 'Filesystem', 'container paths']], frames: ['Ask Docker to execute a command in a running container.', 'The engine finds the container and its environment.', 'It starts an extra process inside that container.', 'The command reads its filesystem and returns the output.'] },
+    ports: { title: 'Follow an HTTP request', nodes: [['globe', 'Your browser', 'localhost:8080'], ['monitor', 'Host port', '8080'], ['route', 'Port mapping', '8080 → 80'], ['box', 'Web service', 'container :80']], frames: ['A request starts at http://localhost:8080.', 'Your host receives the request on port 8080.', 'The published port forwards the request to port 80.', 'The Nginx container sends back an HTTP response.'] },
+    volume: { title: 'Data that outlives a container', nodes: [['box', 'Writer', 'writes the flag'], ['database', 'cargo-data', 'named volume'], ['trash', 'Remove writer', 'volume stays'], ['box', 'Reader', 'mount at /data']], frames: ['Writer saves a file in its mounted volume.', 'The data lives in cargo-data, outside the writable layer.', 'Remove writer. The named volume still exists.', 'A fresh reader mounts the same volume and reads the file.'] },
+    build: { title: 'Build a reusable blueprint', nodes: [['layers', 'FROM', 'base image'], ['file', 'WORKDIR / COPY', 'add your files'], ['terminal', 'CMD', 'startup command'], ['box', 'Your image', 'dock-app:v1']], frames: ['FROM selects the Alpine base image.', 'WORKDIR and COPY set up the application files.', 'CMD defines what to run when the container starts.', 'The build produces an image. Run uses it to create a container.'] },
+    env: { title: 'Same image, new configuration', nodes: [['layers', 'Image', 'same blueprint'], ['sliders', 'Environment', '-e KEY=value'], ['box', 'Container', 'process config'], ['terminal', 'Read the value', 'printenv']], frames: ['Begin with the same image.', 'Set an environment variable when creating the container.', 'The process starts with that configuration.', 'Use printenv through exec to read its value.'] },
+    network: { title: 'Containers talking by name', nodes: [['box', 'Scout', 'client container'], ['network', 'Docker DNS', 'api → address'], ['route', 'fleet network', 'private bridge'], ['box', 'API service', 'internal :80']], frames: ['Scout requests a service on its network.', 'Docker DNS resolves the name api to an address.', 'The packet crosses the user-defined bridge network.', 'The API replies using its internal port, without a host mapping.'] },
+    compose: { title: 'One manifest, a whole fleet', nodes: [['file', 'compose.yaml', 'service manifest'], ['network', 'Default network', 'shared bridge'], ['box', 'Web service', 'nginx:alpine'], ['database', 'Cache service', 'redis:7-alpine']], frames: ['The Compose manifest describes the services.', 'Compose sets up their shared network.', 'It starts a separate container for the web service.', 'It starts cache too. The fleet can be managed together.'] },
+    boss: { title: 'Everything you have learned', nodes: [['layers', 'Build', 'dock-app:v1'], ['network', 'Connect', 'fleet network'], ['database', 'Persist & publish', 'volume + port'], ['flag', 'Verify', 'ready to ship']], frames: ['Build an application image from a Dockerfile.', 'Create a network and start the flagship service.', 'Mount its persistent storage and publish the HTTP port.', 'Verify the response and inspect its state. Capture your final flag.'] }
+  };
+  // Each mission's four stages follow its actual explanation, rather than a generic sequence.
+  const missionNodes = {
+    1: [['terminal', 'Command', 'client → engine'], ['cloud', 'Find the image', 'hello-world'], ['box', 'Create & run', 'main process'], ['pause', 'Process exits', 'container stays']],
+    2: [['cloud', 'Registry', 'alpine:3.20'], ['download', 'Pull layers', 'local download'], ['layers', 'Image cache', 'read-only'], ['check', 'Blueprint ready', 'no container']],
+    3: [['layers', 'Choose image', 'nginx:alpine'], ['box', 'Create', 'lighthouse'], ['play', 'Service runs', 'nginx process'], ['terminal', 'Detach', 'terminal is free']],
+    4: [['pause', 'Cargo exits', 'process finished'], ['search', 'Running list', 'docker ps'], ['box', 'All containers', 'docker ps -a'], ['file', 'Inspect state', 'exit code 0']],
+    5: [['play', 'Running', 'lighthouse'], ['pause', 'Graceful stop', 'SIGTERM'], ['layers', 'Retained state', 'writable layer'], ['refresh', 'Start again', 'same container']],
+    6: [['box', 'Application', 'writes stdout'], ['file', 'Capture output', 'Docker logs'], ['terminal', 'Read messages', 'docker logs'], ['search', 'Add context', 'docker inspect']],
+    8: [['box', 'Cargo stopped', 'ready to remove'], ['pause', 'Stop temp', 'process exits'], ['trash', 'Remove both', 'layers deleted'], ['layers', 'Image remains', 'alpine:3.20']],
+    10: [['box', 'Writer saves', '/data/flag.txt'], ['trash', 'Remove writer', 'private layer gone'], ['database', 'Volume remains', 'cargo-data'], ['box', 'Reader mounts', '/data/flag.txt']],
+    13: [['network', 'Create network', 'fleet bridge'], ['box', 'Attach API', '--network fleet'], ['route', 'Assign address', 'container IP'], ['globe', 'Resolve names', 'Docker DNS']]
+  };
+  function lab() {
+    const sandbox = view === 'sandbox', complete = mission && progress.completed.includes(mission.id);
+    return `<div class="mission-title-row"><div><p class="eyebrow">${sandbox ? 'A safe place to experiment' : 'Chapter ' + (zones.findIndex(z => z.id === mission.zone) + 1) + ' · Mission ' + String(mission.id).padStart(2, '0')}</p><h1 style="margin-top:9px">${sandbox ? 'Your container playground.' : mission.title}</h1><p>${sandbox ? 'Try a command. Watch what changes. Make it yours.' : mission.subtitle}</p><div class="mission-tags"><span class="pill">${icon(sandbox ? 'shield' : 'flag')}${sandbox ? 'Free practice' : complete ? 'Flag captured' : '+' + mission.xp + ' XP'}</span><span class="pill neutral">${icon('terminal')}Simulated Docker</span>${sandbox ? '' : `<span class="pill neutral">${icon('clock')}~${mission.minutes} min</span>`}</div></div><button class="button ghost small" data-action="reset-lab">${icon('refresh')}Reset ${sandbox ? 'sandbox' : 'mission'}</button></div>
+      ${complete ? `<div class="completion-banner"><div><h3>Flag captured. Skill unlocked.</h3><p>You can replay this mission without changing your earned XP.</p></div><button class="button small" data-action="${mission.id < 16 ? 'mission' : 'nav'}" ${mission.id < 16 ? `data-id="${mission.id + 1}"` : 'data-view="achievements"'}>${mission.id < 16 ? 'Next mission' : 'Your achievements'} ${icon('arrow')}</button></div>` : ''}
+      ${sandbox ? `<div class="card sandbox-note">${icon('info')}<div>This terminal simulates Docker locally. The included image registry, files, and services work without a connection. Type <code>help</code> to see supported commands. Builds use the bundled, fixed Dockerfile.</div></div>` : ''}
+      <div class="mission-layout"><div class="workbench"><section class="card animation-card"><header class="panel-header"><div class="panel-title">${icon('layers')}Under the hood</div><small>Interactive explainer</small></header><div id="animation" role="group" aria-label="Animated Docker explanation"></div></section>
+      <section class="card terminal" aria-label="Simulated Docker terminal"><header class="panel-header"><div class="panel-title"><div class="terminal-dots" aria-hidden="true"><span></span><span></span><span></span></div><span class="terminal-title">cadet@dockerquest: ~/mission</span></div><small>PRACTICE ENGINE</small></header><div id="terminal-log" class="terminal-log" role="log" aria-label="Command output" aria-live="polite" aria-relevant="additions text"></div><form id="command-form" class="terminal-input-row" autocomplete="off"><label class="terminal-prompt" for="command-input">cadet $</label><input id="command-input" name="command" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Docker command" placeholder="${mission?.id === 1 ? 'Type docker version to begin...' : 'Type a command, or help...'}" maxlength="2000"><button type="submit" class="terminal-enter" aria-label="Run command">↵</button></form></section><div class="terminal-hint"><span><kbd>↑</kbd> <kbd>↓</kbd> command history</span><span><kbd>Tab</kbd> suggestions</span><span><kbd>Ctrl</kbd> + <kbd>L</kbd> clear</span></div></div>
+      <aside class="mission-right">${sandbox ? `<section class="card inventory"><h3>Engine inventory</h3><div id="inventory" aria-live="polite"></div></section><section class="card notes-card"><h3>${icon('bulb')}Try a little experiment</h3><p>Start a service, publish a port, then stop it and try the same request. What changes? These recipes fill the terminal; you run them.</p><div class="recipe-list">${[['Start a web service', 'docker run -d --name web -p 8080:80 nginx:alpine'], ['Check the response', 'curl http://localhost:8080'], ['Explore persistent storage', 'docker volume create cargo-data'], ['Build an image', 'docker build -t dock-app:v1 .']].map(([label, cmd]) => `<button data-action="recipe" data-command="${escape(cmd)}">${label}${icon('arrow')}</button>`).join('')}</div></section>` : `<section class="card objectives-card"><h3>Mission briefing</h3><p class="brief-text">${mission.brief}</p><div class="objectives-heading"><span>Your objectives</span><span id="objective-count" class="objective-count">0/${mission.objectives.length}</span></div><ul id="objective-list" class="objective-list"></ul><div class="hint-area"><button class="hint-toggle" data-action="hint"><span>${icon('bulb')}Need a nudge?</span><span id="hint-label">Reveal hint</span></button><div id="hint-body"></div></div></section>
+      <section class="card capture-card"><h3>${icon('flag')}Capture the flag</h3><p>Complete the objectives, then type <code>claim</code> in the terminal to reveal your flag. Found a flag in a file? Use it here.</p><form id="flag-form" class="flag-form"><input id="flag-input" aria-label="Mission flag" name="flag" placeholder="DOCK{your_flag_here}" autocomplete="off" spellcheck="false" maxlength="100"><button class="button" type="submit">Capture</button></form><div id="flag-status" class="flag-status" aria-live="polite">${complete ? 'Already captured. Replay as often as you like.' : 'Your next mission is waiting on the other side.'}</div></section><section class="card notes-card"><h3>${icon('book')}The idea to take with you</h3><p>${mission.lesson}</p><button class="text-button" data-action="nav" data-view="guide">Open the field guide ${icon('arrow')}</button></section>`}</aside></div>`;
+  }
+  function fieldGuide() {
+    return `<div class="page-head guide-head"><div><p class="eyebrow">Good tools for your back pocket</p><h1>The field guide.</h1><p>Commands, concepts, and a little clarity. Always available offline.</p></div><input class="guide-search" id="guide-search" type="search" aria-label="Search the field guide" placeholder="Find a command or concept..." value="${escape(search)}"></div><div class="guide-grid" id="guide-grid">${guideCards()}</div>`;
+  }
+  function guideCards() {
+    const filtered = guide.filter(row => JSON.stringify(row).toLowerCase().includes(search.toLowerCase()));
+    return filtered.length ? filtered.map(([title, description, commands]) => `<section class="card guide-card"><h3>${title}</h3><p>${description}</p>${commands.map(([cmd, explanation]) => `<div class="guide-command"><button data-action="copy" data-command="${escape(cmd)}" aria-label="Copy ${escape(cmd)}">${icon('copy')}</button><code>${escape(cmd)}</code><span>${explanation}</span></div>`).join('')}</section>`).join('') : '<p class="empty-state">No matching commands. Try “volume”, “run”, or “network”.</p>';
+  }
+  const badgeData = () => [
+    { name: 'First launch', icon: 'bolt', desc: 'Run your first container and capture your first flag.', earned: progress.completed.includes(1) },
+    { name: 'Harbor explorer', icon: 'anchor', desc: 'Complete all four Docker foundation missions.', earned: progress.completed.includes(4) },
+    { name: 'Dockyard detective', icon: 'search', desc: 'Master container lifecycle, logs, and filesystem clues.', earned: progress.completed.includes(8) },
+    { name: 'Image builder', icon: 'layers', desc: 'Build and run your very own Docker image.', earned: progress.completed.includes(11) },
+    { name: 'Systems engineer', icon: 'wrench', desc: 'Complete the ports, persistence, build, and configuration chapter.', earned: progress.completed.includes(12) },
+    { name: 'Fleet commander', icon: 'network', desc: 'Launch a multi-service stack using Compose.', earned: progress.completed.includes(15) },
+    { name: 'Fleet captain', icon: 'trophy', desc: 'Capture all 16 flags and complete the final challenge.', earned: progress.completed.includes(16) },
+    { name: 'Curious mind', icon: 'compass', desc: 'Run five successful commands in the sandbox.', earned: progress.sandboxCommands >= 5 },
+    { name: 'Own your course', icon: 'flag', desc: 'Complete a mission without revealing any hints.', earned: progress.completed.some(id => !progress.hints[id]) }
+  ];
+  function achievements() {
+    const badges = badgeData();
+    return `<div class="page-head"><div><p class="eyebrow">Proof of a little persistence</p><h1>Skills worth celebrating.</h1><p>${badges.filter(b => b.earned).length} of ${badges.length} milestones earned · ${xp().toLocaleString()} XP · ${rank()}</p></div><button class="button ghost small" data-action="export">${icon('download')}Export progress</button></div><div class="achievements-grid">${badges.map(b => `<section class="card achievement ${b.earned ? 'earned' : ''}"><div class="achievement-medal">${icon(b.icon)}</div><h3>${b.name}</h3><p>${b.desc}</p><div class="achievement-status">${icon(b.earned ? 'check' : 'lock')}${b.earned ? 'Achievement unlocked' : 'A milestone ahead'}</div></section>`).join('')}</div>`;
+  }
+  function openMission(id) {
+    id = Number(id); const target = missions.find(m => m.id === id);
+    if (!target || !unlocked(id)) { toast('Capture the previous flag to unlock this mission.'); return; }
+    save(); mission = target; view = 'mission'; progress.lastMission = id;
+    loadLab(); render(); save(); window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+  function loadLab(reset = false) {
+    const saved = reset ? null : progress.drafts[mission?.id || 'sandbox'];
+    engine = new DQEngine(mission, saved?.world);
+    transcript = saved?.transcript?.length ? saved.transcript.slice() : [{ type: 'welcome', text: `Docker Quest · Offline practice engine\n${mission ? 'Mission ' + String(mission.id).padStart(2, '0') + ': ' + mission.title : 'Sandbox: your own little Docker universe.'}\n\n${mission?.id === 1 ? 'Start with docker version. Type help if you get stuck.' : 'Type help for commands. The field guide is always available.'}\nAll output and services in this terminal are simulated.` }];
+    history = saved?.history?.slice() || []; historyIndex = history.length; visualTopic = mission?.topic || 'run'; frame = 0;
+  }
+  function navigate(target) {
+    if (!['campaign', 'sandbox', 'guide', 'achievements'].includes(target)) return;
+    save(); view = target; mission = null;
+    if (target === 'sandbox') loadLab(); else engine = null;
+    document.body.classList.remove('menu-open'); render(); window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+  function appendLine(entry) {
+    const line = document.createElement('pre');
+    line.className = 'terminal-line ' + entry.type;
+    if (entry.type === 'command') line.innerHTML = `<span class="prompt">cadet $</span> ${escape(entry.text)}`;
+    else line.textContent = entry.text;
+    $('#terminal-log').append(line);
+  }
+  function drawTerminal() {
+    const log = $('#terminal-log'); if (!log) return;
+    log.replaceChildren(); transcript.forEach(appendLine); log.scrollTop = log.scrollHeight;
+  }
+  function runCommand(input) {
+    input = input.trim(); if (!input || !engine) return;
+    history.push(input); history = history.slice(-100); historyIndex = history.length; draftCommand = '';
+    const commandEntry = { type: 'command', text: input }; transcript.push(commandEntry); appendLine(commandEntry);
+    const result = engine.execute(input);
+    if (result.clear) { transcript = []; drawTerminal(); }
+    else if (result.output) { const entry = { type: result.error ? 'error' : result.flag ? 'success' : 'output', text: result.output }; transcript.push(entry); appendLine(entry); }
+    transcript = transcript.slice(-100); if ($('#terminal-log').children.length > 100) drawTerminal();
+    $('#terminal-log').scrollTop = $('#terminal-log').scrollHeight;
+    $('#command-input').value = '';
+    if (!result.error && !result.clear) {
+      if (view === 'sandbox') progress.sandboxCommands++;
+      if (result.topic) visualTopic = view === 'mission' ? mission.topic : result.topic;
+      frame = 0; drawAnimation(); playAnimation();
+    }
+    updateObjectives(); if (view === 'sandbox') drawInventory(); save();
+  }
+  function updateObjectives() {
+    if (!mission || !$('#objective-list')) return;
+    const results = engine.objectives();
+    $('#objective-list').innerHTML = mission.objectives.map((o, i) => `<li class="${results[i] ? 'done' : ''}"><span class="objective-check" aria-label="${results[i] ? 'Complete' : 'Incomplete'}">${results[i] ? icon('check') : ''}</span><span>${escape(o.text)}</span></li>`).join('');
+    $('#objective-count').textContent = results.filter(Boolean).length + '/' + results.length;
+    if (results.every(Boolean) && !progress.completed.includes(mission.id)) { $('#flag-status').className = 'flag-status success'; $('#flag-status').textContent = 'All objectives complete. Type claim to retrieve your flag.'; }
+    renderHints();
+  }
+  function renderHints() {
+    if (!mission || !$('#hint-body')) return;
+    const count = progress.hints[mission.id] || 0;
+    $('#hint-label').textContent = count === 3 ? 'All hints revealed' : count ? `Next hint (${count}/3)` : 'Reveal hint';
+    $('#hint-body').innerHTML = count ? `<div class="hint-content"><code>${escape(mission.hints[count - 1])}</code></div><p class="hint-meta">Hint ${count}/3 · Hints never reduce your XP.</p>` : '';
+  }
+  function captureFlag(value) {
+    if (!mission) return;
+    const status = $('#flag-status');
+    if (!engine.objectives().every(Boolean)) { status.className = 'flag-status error'; status.textContent = 'Complete every objective before capturing this flag.'; return; }
+    if (value.trim() !== mission.flag) { status.className = 'flag-status error'; status.textContent = 'That flag does not match. Type claim, then copy the full DOCK{...} token.'; return; }
+    const already = progress.completed.includes(mission.id);
+    if (!already) progress.completed.push(mission.id);
+    save(); render();
+    if (already) { toast('Correct flag. You already earned this mission’s XP.'); return; }
+    celebrate();
+    const next = mission.id < 16 ? missions[mission.id] : null;
+    modal(`<div class="modal-success"><div class="achievement-medal">${icon(mission.id === 16 ? 'trophy' : 'flag')}</div><p class="eyebrow">Mission ${String(mission.id).padStart(2, '0')} complete</p><h2 style="margin-top:9px">${next ? 'A flag captured.<br>A skill for life.' : 'You’re ready to ship.'}</h2><p class="modal-copy">${next ? `You completed ${escape(mission.title)}<br>Next stop: ${escape(next.title)}` : 'All 16 missions complete. From your first container to a fleet of services — you earned your captain’s stripes.'}</p><div class="reward-line">+${mission.xp} XP · ${xp().toLocaleString()} XP TOTAL</div><div class="flag-display">${mission.flag}</div><div class="modal-actions"><button class="button" data-action="${next ? 'next' : 'show-achievements'}" ${next ? `data-id="${next.id}"` : ''}>${next ? 'Next mission' : 'View achievements'}${icon('arrow')}</button><button class="button secondary" data-action="close-modal">Take a breather</button></div></div>`);
+  }
+  function drawAnimation() {
+    const el = $('#animation'); if (!el) return;
+    const base = visuals[visualTopic] || visuals.run;
+    const data = { ...base, nodes: missionNodes[mission?.id] || base.nodes };
+    const captions = mission?.frames || data.frames;
+    el.innerHTML = `<div class="diagram-stage"><div class="diagram-nodes" role="img" aria-label="${escape(data.title)}. ${data.nodes.map(n => n[1]).join(' → ')}">${data.nodes.map(([img, label, detail], i) => `<div class="diagram-node ${i <= frame ? 'reached' : ''} ${i === frame ? 'active' : ''}"><div class="node-body">${icon(img)}<span class="node-step">${i + 1}</span></div><div class="node-label">${label}</div><div class="node-detail">${detail}</div></div>${i < 3 ? `<span class="diagram-arrow ${i === frame && playing ? 'flow' : ''}"></span>` : ''}`).join('')}</div></div><div class="animation-caption"><p class="frame-caption" aria-live="polite">${escape(captions[frame])}</p><div class="animation-controls"><button data-action="animate" aria-label="${playing ? 'Pause' : frame === 3 ? 'Replay' : 'Play'} animation">${icon(playing ? 'pause' : frame === 3 ? 'refresh' : 'play')}${playing ? 'Pause' : frame === 3 ? 'Replay' : 'Play explanation'}</button><div class="step-dots">${captions.map((_, i) => `<button data-action="frame" data-frame="${i}" class="${i === frame ? 'active' : ''}" aria-label="Step ${i + 1}" aria-pressed="${i === frame}"></button>`).join('')}</div><button data-action="next-frame" aria-label="Next explanation step">${frame + 1}/4${icon('step')}</button></div></div>`;
+  }
+  function stopAnimation() { clearInterval(animationTimer); animationTimer = null; playing = false; }
+  function playAnimation() {
+    stopAnimation(); if (!progress.motion || matchMedia('(prefers-reduced-motion: reduce)').matches) { drawAnimation(); return; }
+    if (frame === 3) frame = 0; playing = true; drawAnimation();
+    animationTimer = setInterval(() => { frame++; if (frame >= 3) { frame = 3; stopAnimation(); } drawAnimation(); }, 2200);
+  }
+  function drawInventory() {
+    const el = $('#inventory'); if (!el) return;
+    const s = engine.state;
+    const group = (name, entries, img) => `<div class="inventory-group"><p class="eyebrow">${name} · ${entries.length}</p>${entries.length ? entries.map(([label, detail]) => `<div class="inventory-row">${icon(img)}<span>${escape(label)}</span><span>${escape(detail)}</span></div>`).join('') : '<p class="inventory-empty">Nothing here yet.</p>'}</div>`;
+    el.innerHTML = group('Containers', s.containers.map(c => [c.name, c.status]), 'box') + group('Images', s.images.map(i => [i, 'cached']), 'layers') + group('Volumes', Object.keys(s.volumes).map(v => [v, 'local']), 'database') + group('Networks', Object.entries(s.networks).map(([name, ids]) => [name, ids.length + ' members']), 'network');
+  }
+  function attachTerminalKeyboard() {
+    const input = $('#command-input'); if (!input) return;
+    input.addEventListener('keydown', event => {
+      if (event.key === 'ArrowUp') { event.preventDefault(); if (historyIndex === history.length) draftCommand = input.value; historyIndex = Math.max(0, historyIndex - 1); input.value = history[historyIndex] || ''; }
+      if (event.key === 'ArrowDown') { event.preventDefault(); historyIndex = Math.min(history.length, historyIndex + 1); input.value = historyIndex === history.length ? draftCommand : history[historyIndex] || ''; }
+      if (event.ctrlKey && event.key.toLowerCase() === 'l') { event.preventDefault(); runCommand('clear'); }
+      if (event.key === 'Tab' && input.value.trim()) {
+        event.preventDefault();
+        const suggestions = ['docker version', 'docker info', 'docker run ', 'docker pull ', 'docker images', 'docker ps', 'docker ps -a', 'docker stop ', 'docker start ', 'docker logs ', 'docker inspect ', 'docker exec ', 'docker build -t ', 'docker network create ', 'docker volume create ', 'docker compose up -d', 'docker compose ps', 'claim', 'clear', 'help'];
+        const matches = suggestions.filter(x => x.startsWith(input.value));
+        if (matches.length === 1) input.value = matches[0];
+        else if (matches.length > 1) toast('Suggestions: ' + matches.slice(0, 5).join(' · '));
+        else toast('No matching command. Type help to see the command list.');
+      }
+    });
+  }
+  function modal(html, title = '') {
+    const el = $('#modal');
+    el.innerHTML = `${title ? `<div class="modal-header"><h2 id="dialog-title">${title}</h2><button class="modal-close" data-action="close-modal" aria-label="Close dialog">${icon('close')}</button></div>` : ''}${html}`;
+    el.setAttribute('aria-label', title || 'Mission complete'); if (!el.open) el.showModal();
+  }
+  function closeModal() { $('#modal').close(); }
+  function about() {
+    modal(`<p class="modal-copy">You’re a cadet in a container harbor. Work through 16 missions, capture their flags, and earn your way to fleet captain.</p><div class="setting-row"><div><strong>01 · Learn by doing</strong><small>Read the briefing. Enter commands in the practice terminal.</small></div>${icon('terminal')}</div><div class="setting-row"><div><strong>02 · See how it works</strong><small>Play the explainer or step through the animated diagram.</small></div>${icon('layers')}</div><div class="setting-row"><div><strong>03 · Capture your flag</strong><small>Complete the objectives, run claim, and submit the token.</small></div>${icon('flag')}</div><p class="modal-copy" style="margin-top:16px">The game runs entirely on this device. The Docker engine, image pulls, and HTTP requests are simulated. It never executes commands on your computer. Your progress saves automatically; export it for a backup.</p><p class="modal-copy" style="margin-top:10px">Use Download offline game to save the complete game as one HTML file. Open that file in your browser whenever you want to play without a connection.</p><div class="modal-actions"><button class="button" data-action="close-modal">Let’s explore ${icon('arrow')}</button></div>`, 'Welcome aboard.');
+  }
+  function settings() {
+    modal(`<label class="setting-row"><div><strong>Animated explanations</strong><small>Turn motion off to advance diagrams manually.</small></div><input type="checkbox" id="motion-setting" ${progress.motion ? 'checked' : ''}></label><div class="setting-row"><div><strong>Progress backup</strong><small>Take your voyage to another browser or device.</small></div></div><div class="modal-actions"><button class="button secondary" data-action="export">${icon('download')}Export progress</button><button class="button secondary" data-action="import">${icon('upload')}Import progress</button></div><div class="modal-actions"><button class="button secondary" data-action="download-game">${icon('download')}Download offline game</button></div>${!storageOK ? '<p class="storage-warning">Browser storage is unavailable. Export before closing the app.</p>' : ''}<hr class="modal-divider"><p class="modal-copy">Resetting your campaign clears all flags, XP, lab states, and achievements on this browser. Export a backup first if you want to keep them.</p><div class="modal-actions"><button class="button danger small" data-action="confirm-reset">Reset campaign</button></div><input class="file-input" type="file" id="progress-file" accept="application/json,.json">`, 'Make it your voyage.');
+  }
+  function downloadGame() {
+    // Save only the original shell and embedded code; progress is backed up separately.
+    const copy = document.documentElement.cloneNode(true);
+    copy.querySelector('#app')?.replaceChildren();
+    const toastElement = copy.querySelector('#toast');
+    if (toastElement) { toastElement.replaceChildren(); toastElement.className = 'toast'; }
+    const dialog = copy.querySelector('#modal');
+    if (dialog) { dialog.replaceChildren(); dialog.removeAttribute('open'); dialog.removeAttribute('aria-label'); }
+    copy.querySelectorAll('.confetti').forEach(element => element.remove());
+    copy.querySelector('body')?.removeAttribute('class');
+    const title = copy.querySelector('title');
+    if (title) title.textContent = 'Docker Quest — Learn. Build. Ship.';
+    const blob = new Blob(['<!doctype html>\n', copy.outerHTML], { type: 'text/html;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'docker-quest.html';
+    link.click();
+    setTimeout(() => URL.revokeObjectURL(url), 5000);
+    toast('Offline game downloaded. Open the HTML file in your browser to play anywhere.');
+  }
+  function exportProgress() {
+    save(); const payload = { ...progress, exportedAt: new Date().toISOString() };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob), link = document.createElement('a'); link.href = url; link.download = 'docker-quest-progress.json'; link.click(); setTimeout(() => URL.revokeObjectURL(url), 5000); toast('Progress exported. Keep this file as your voyage backup.');
+  }
+  async function importProgress(file) {
+    if (!file) return;
+    try {
+      if (file.size > 2_000_000) throw new Error('This file is too large. Progress files must be smaller than 2 MB.');
+      const incoming = sanitize(JSON.parse(await file.text()));
+      modal(`<p class="modal-copy">This backup contains <strong>${incoming.completed.length} completed missions</strong>. Importing will replace the progress currently saved in this browser.</p><div class="modal-actions"><button class="button" id="apply-import">Import this backup</button><button class="button secondary" data-action="close-modal">Cancel</button></div>`, 'Restore your voyage?');
+      $('#apply-import').addEventListener('click', () => { progress = incoming; engine = null; mission = null; view = 'campaign'; closeModal(); save(); render(); toast('Progress restored. Welcome back aboard.'); }, { once: true });
+    } catch (error) { toast('Could not import: ' + error.message); }
+  }
+  async function copyCommand(text) {
+    try { if (!navigator.clipboard?.writeText) throw new Error('Unavailable'); await navigator.clipboard.writeText(text); toast('Command copied.'); }
+    catch { modal(`<p class="modal-copy">Select this command and copy it with Ctrl+C (or your device’s copy action).</p><input style="width:100%;margin-top:15px;padding:11px;background:#112015;border:1px solid #536d41;border-radius:7px;color:var(--lime);font:11px var(--mono)" aria-label="Command to copy" id="copy-fallback" readonly value="${escape(text)}">`, 'Copy a command'); $('#copy-fallback').select(); }
+  }
+  function celebrate() {
+    if (!progress.motion || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const wrap = document.createElement('div'); wrap.className = 'confetti'; wrap.setAttribute('aria-hidden', 'true');
+    const colors = ['#c6f27c', '#95cddd', '#eab591', '#b7a2e4'];
+    wrap.innerHTML = Array.from({ length: 38 }, (_, i) => `<i style="--left:${Math.random() * 100}%;--color:${colors[i % 4]};--duration:${2 + Math.random() * 2}s;--delay:${Math.random() * .5}s"></i>`).join(''); document.body.append(wrap); setTimeout(() => wrap.remove(), 5000);
+  }
+  document.addEventListener('click', event => {
+    const button = event.target.closest('[data-action]'); if (!button || button.disabled) return;
+    const action = button.dataset.action;
+    switch (action) {
+      case 'nav': navigate(button.dataset.view); break;
+      case 'home': event.preventDefault(); navigate('campaign'); break;
+      case 'mission': document.body.classList.remove('menu-open'); openMission(button.dataset.id); break;
+      case 'menu': document.body.classList.toggle('menu-open'); syncMenu(); break;
+      case 'about': about(); break;
+      case 'settings': settings(); break;
+      case 'close-modal': closeModal(); break;
+      case 'next': closeModal(); openMission(button.dataset.id); break;
+      case 'show-achievements': closeModal(); navigate('achievements'); break;
+      case 'download-game': downloadGame(); break;
+      case 'export': exportProgress(); break;
+      case 'import': $('#progress-file')?.click(); break;
+      case 'copy': copyCommand(button.dataset.command); break;
+      case 'recipe': $('#command-input').value = button.dataset.command; $('#command-input').focus(); break;
+      case 'hint': if (mission) { progress.hints[mission.id] = Math.min((progress.hints[mission.id] || 0) + 1, 3); renderHints(); save(); } break;
+      case 'animate': if (playing) { stopAnimation(); drawAnimation(); } else playAnimation(); break;
+      case 'frame': stopAnimation(); frame = Number(button.dataset.frame); drawAnimation(); break;
+      case 'next-frame': stopAnimation(); frame = (frame + 1) % 4; drawAnimation(); break;
+      case 'reset-lab': modal(`<p class="modal-copy">This will restore this ${mission ? 'mission' : 'sandbox'} to its starting state and clear its command history. Earned flags and XP are kept.</p><div class="modal-actions"><button class="button" data-action="apply-lab-reset">Reset lab</button><button class="button secondary" data-action="close-modal">Keep practicing</button></div>`, 'A fresh workspace?'); break;
+      case 'apply-lab-reset': closeModal(); stopAnimation(); loadLab(true); save(); render(); toast('Lab reset. A clean slate awaits.'); break;
+      case 'confirm-reset': modal(`<p class="modal-copy">All ${progress.completed.length} captured flags, ${xp()} XP, and saved lab states will be cleared in this browser.</p><div class="modal-actions"><button class="button danger" data-action="apply-reset">Clear all progress</button><button class="button secondary" data-action="close-modal">Keep my voyage</button></div>`, 'Reset your campaign?'); break;
+      case 'apply-reset': closeModal(); progress = defaults(); engine = null; mission = null; view = 'campaign'; save(); render(); toast('Campaign reset. Your adventure starts here.'); break;
+    }
+  });
+  document.addEventListener('submit', event => {
+    if (event.target.id === 'command-form') { event.preventDefault(); runCommand($('#command-input').value); }
+    if (event.target.id === 'flag-form') { event.preventDefault(); captureFlag($('#flag-input').value); }
+  });
+  document.addEventListener('input', event => { if (event.target.id === 'guide-search') { search = event.target.value; $('#guide-grid').innerHTML = guideCards(); } });
+  document.addEventListener('change', event => {
+    if (event.target.id === 'motion-setting') { progress.motion = event.target.checked; document.body.classList.toggle('motion-off', !progress.motion); stopAnimation(); drawAnimation(); save(); }
+    if (event.target.id === 'progress-file') importProgress(event.target.files[0]);
+  });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && document.body.classList.contains('menu-open')) { document.body.classList.remove('menu-open'); syncMenu(); $('.mobile-menu')?.focus(); } });
+  window.addEventListener('beforeunload', save);
+  document.addEventListener('visibilitychange', () => { if (document.hidden) { stopAnimation(); drawAnimation(); save(); } });
+  render();
+
+})();
+
+</script>
 </body>
 </html>
