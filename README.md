@@ -2,6 +2,14 @@
 
 Learn Docker one container—and one captured flag—at a time. Docker Quest is a gamified learning adventure with a practice terminal, animated visual explanations, and 16 progressively unlocked missions inspired by flag-based home labs.
 
+## Play or download
+
+| Edition | Missions | Time limit | Play in your browser | Download one HTML file |
+| --- | ---: | --- | --- | --- |
+| **Docker Quest** — the complete Docker learning campaign | 16 across 4 chapters | No time limit | [Play Docker Quest](https://edmvidanes.github.io/docker-quest/) | [Docker Quest HTML](https://github.com/edmvidanes/docker-quest/raw/refs/heads/main/index.html) |
+
+The browser play link uses GitHub Pages over HTTPS. For offline play, choose **Download offline game** inside the game, or open the HTML link and save it as `index.html`. Open that saved file in a modern browser. The screenshot and this README are not required to play.
+
 ![Docker Quest campaign and learning path](docs/screenshot.jpg)
 
 ## Objective
